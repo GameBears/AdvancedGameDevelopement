@@ -78,7 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Skripts\Game\GameManager.cs" />
+    <Compile Include="Assets\Skripts\Game\GameManagement.cs" />
     <Compile Include="Assets\Skripts\Game\PlayerController.cs" />
     <Compile Include="Assets\Skripts\Game\PlayerInputEventsGame.cs" />
     <Compile Include="Assets\Skripts\Menu\PlayerInputEventsMenu.cs" />
