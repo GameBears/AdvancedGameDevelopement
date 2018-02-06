@@ -8,29 +8,39 @@ enum Room
     FLOOR,
     SLEEP,
     LIVING,
-    BATH,
-    EXIT
+    OUTDOORS,
+    NEWDAY,
+    SEQUENCE
 };
 
 public class GameManagement : MonoBehaviour
 {
-    GameObject player;
+    GameObject player, leftSpawn, rightSpawn;
     Vector3 oldPlayerPosition;
     Room room = Room.SLEEP;
     Room oldRoom = Room.SLEEP;
-    int dayTimer = 1;
+    int dayCounter = 1;
+
+    bool toDoMeal = false;
+    bool toDoVacuum = false;
+    bool toDoGarbage = false;
+    bool toDoDishes = false;
+    bool toDoWindow = false;
 
     public Sprite kitchenSprite;
     public Sprite floorSprite;
     public Sprite floorSpriteFinal;
     public Sprite sleepSprite;
     public Sprite livingSprite;
-    public Sprite bathSprite;
+    public Sprite outDoorsSprite;
+    public float outOfRoomAlpha;
 
     // Use this for initialization
     void Start()
     {
         player = GameObject.Find("Player");
+        leftSpawn = GameObject.Find("LeftSpawn");
+        rightSpawn = GameObject.Find("RightSpawn");
         oldPlayerPosition = player.transform.position;
     }
 
@@ -38,19 +48,26 @@ public class GameManagement : MonoBehaviour
     void Update()
     {
         checkPlayerOutOfSight();
+
+        checkToDoListComplete();
+    }
+
+    void checkToDoListComplete()
+    {
+        if (toDoMeal && toDoVacuum && toDoGarbage && toDoDishes && toDoWindow)
+        {
+            dayCounter = newDay(dayCounter, ref room);
+        }
     }
 
     void checkPlayerOutOfSight()
     {
         Vector3 playerPosition = player.transform.position;
-
-        var dist = (playerPosition - Camera.main.transform.position).z;
-
-        var leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).x;
-        var rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, dist)).x;
-
-        bool leftBorderHit = playerPosition.x < leftBorder;
-        bool rightBorderHit = playerPosition.x > rightBorder;
+        Vector3 leftSpawnPosition = leftSpawn.transform.position;
+        Vector3 rightSpawnPosition = rightSpawn.transform.position;
+        
+        bool leftBorderHit = playerPosition.x < leftSpawnPosition.x - outOfRoomAlpha;
+        bool rightBorderHit = playerPosition.x > rightSpawnPosition.x + outOfRoomAlpha;
 
         if (leftBorderHit || rightBorderHit)
         {
@@ -67,25 +84,16 @@ public class GameManagement : MonoBehaviour
 
             if (oldRoom != room)
             {
-                if (room == Room.EXIT)
+                if (leftBorderHit)
                 {
-                    //TODO: new day
-                    dayTimer = newDay(dayTimer, ref room);
+                    player.transform.position = GameObject.Find("RightSpawn").transform.position;
                 }
                 else
                 {
-                    if (leftBorderHit)
-                    {
-                        player.transform.position = GameObject.Find("RightSpawn").transform.position;
-                    }
-                    else
-                    {
-                        player.transform.position = GameObject.Find("LeftSpawn").transform.position;
-                    }
-
-                    print(dayTimer);
-                    this.GetComponent<SpriteRenderer>().sprite = getRoomSprite(room, dayTimer);
+                    player.transform.position = GameObject.Find("LeftSpawn").transform.position;
                 }
+
+                this.GetComponent<SpriteRenderer>().sprite = getRoomSprite(room, dayCounter);
             }
             else
             {
@@ -143,11 +151,11 @@ public class GameManagement : MonoBehaviour
             }
             else
             {
-                return Room.BATH;
+                return Room.OUTDOORS;
             }
         }
 
-        if (oldRoom == Room.BATH)
+        if (oldRoom == Room.OUTDOORS)
         {
             if (left)
             {
@@ -155,11 +163,11 @@ public class GameManagement : MonoBehaviour
             }
             else
             {
-                return Room.EXIT;
+                return Room.OUTDOORS;
             }
         }
 
-        return Room.EXIT;
+        return oldRoom;
     }
 
     Sprite getRoomSprite(Room room, int day)
@@ -187,9 +195,9 @@ public class GameManagement : MonoBehaviour
             return floorSprite;
         }
 
-        if (room == Room.BATH)
+        if (room == Room.OUTDOORS)
         {
-            return bathSprite;
+            return outDoorsSprite;
         }
 
         return sleepSprite;
