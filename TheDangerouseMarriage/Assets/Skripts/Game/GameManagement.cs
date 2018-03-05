@@ -1,31 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-enum Room
+public enum Room
 {
     KITCHEN,
     FLOOR,
     SLEEP,
     LIVING,
     OUTDOORS,
-    NEWDAY,
-    SEQUENCE
+    NEWDAY
 };
 
 public class GameManagement : MonoBehaviour
 {
-    GameObject player, leftSpawn, rightSpawn;
-    Vector3 oldPlayerPosition;
-    Room room = Room.SLEEP;
-    Room oldRoom = Room.SLEEP;
-    int dayCounter = 1;
+    GameObject player, leftSpawn, rightSpawn, furniture;
+    //Queue<Sprite> sequence = new Queue<Sprite>();
 
-    bool toDoMeal = false;
-    bool toDoVacuum = false;
-    bool toDoGarbage = false;
-    bool toDoDishes = false;
-    bool toDoWindow = false;
+    Vector3 oldPlayerPosition;
+    public Room room;
+    Room oldRoom;
+    int dayCounter = 0;
 
     public Sprite kitchenSprite;
     public Sprite floorSprite;
@@ -35,29 +31,29 @@ public class GameManagement : MonoBehaviour
     public Sprite outDoorsSprite;
     public float outOfRoomAlpha;
 
+    public int getDay()
+    {
+        return dayCounter;
+    }
+
     // Use this for initialization
     void Start()
     {
         player = GameObject.Find("Player");
         leftSpawn = GameObject.Find("LeftSpawn");
         rightSpawn = GameObject.Find("RightSpawn");
+        furniture = GameObject.Find("Furniture");
         oldPlayerPosition = player.transform.position;
+
+        newDay();
+        setRoomSprites();
+        oldRoom = room;
     }
 
     // Update is called once per frame
     void Update()
     {
         checkPlayerOutOfSight();
-
-        checkToDoListComplete();
-    }
-
-    void checkToDoListComplete()
-    {
-        if (toDoMeal && toDoVacuum && toDoGarbage && toDoDishes && toDoWindow)
-        {
-            dayCounter = newDay(dayCounter, ref room);
-        }
     }
 
     void checkPlayerOutOfSight()
@@ -65,7 +61,7 @@ public class GameManagement : MonoBehaviour
         Vector3 playerPosition = player.transform.position;
         Vector3 leftSpawnPosition = leftSpawn.transform.position;
         Vector3 rightSpawnPosition = rightSpawn.transform.position;
-        
+
         bool leftBorderHit = playerPosition.x < leftSpawnPosition.x - outOfRoomAlpha;
         bool rightBorderHit = playerPosition.x > rightSpawnPosition.x + outOfRoomAlpha;
 
@@ -84,16 +80,20 @@ public class GameManagement : MonoBehaviour
 
             if (oldRoom != room)
             {
+                Vector3 newPosition = player.transform.position;
+
                 if (leftBorderHit)
                 {
-                    player.transform.position = GameObject.Find("RightSpawn").transform.position;
+                    newPosition.x = rightSpawn.transform.position.x;
                 }
                 else
                 {
-                    player.transform.position = GameObject.Find("LeftSpawn").transform.position;
+                    newPosition.x = leftSpawn.transform.position.x;
                 }
 
-                this.GetComponent<SpriteRenderer>().sprite = getRoomSprite(room, dayCounter);
+                player.transform.position = newPosition;
+
+                setRoomSprites();
             }
             else
             {
@@ -170,47 +170,124 @@ public class GameManagement : MonoBehaviour
         return oldRoom;
     }
 
-    Sprite getRoomSprite(Room room, int day)
+    void setRoomSprites()
     {
+        Sprite roomSprite;
+
+        foreach (Transform furnitureRooms in furniture.transform)
+        {
+            foreach (Transform furnitureInRoom in furnitureRooms)
+            {
+                furnitureInRoom.GetComponent<SpriteRenderer>().sortingLayerName = "NotVisible";
+            }
+        }
+
         if (room == Room.SLEEP)
         {
-            return sleepSprite;
-        }
+            showFurnitureInRoom("Sleep");
 
-        if (room == Room.LIVING)
+            roomSprite = sleepSprite;
+        }
+        else if (room == Room.LIVING)
         {
-            return livingSprite;
-        }
+            showFurnitureInRoom("Living");
 
-        if (room == Room.KITCHEN)
+            roomSprite = livingSprite;
+        }
+        else if (room == Room.KITCHEN)
         {
-            return kitchenSprite;
-        }
+            showFurnitureInRoom("Kitchen");
 
-        if (room == Room.FLOOR)
+            roomSprite = kitchenSprite;
+        }
+        else if (room == Room.FLOOR)
         {
-            if (day > 2)
-                return floorSpriteFinal;
+            showFurnitureInRoom("Floor");
 
-            return floorSprite;
+            roomSprite = floorSprite;
         }
-
-        if (room == Room.OUTDOORS)
+        else if (room == Room.OUTDOORS)
         {
-            return outDoorsSprite;
+            showFurnitureInRoom("Outdoors");
+
+            roomSprite = outDoorsSprite;
+        }
+        else
+        {
+            roomSprite = sleepSprite;
         }
 
-        return sleepSprite;
+        this.GetComponent<SpriteRenderer>().sprite = roomSprite;
     }
 
-    int newDay(int day, ref Room room)
+    void showFurnitureInRoom(string name)
     {
-        player.transform.position = GameObject.Find("LeftSpawn").transform.position;
+        Transform furnitureRoom= furniture.transform.Find(name);
+
+        if (furnitureRoom != null)
+        {
+            foreach (Transform furnitureInRoom in furnitureRoom)
+            {
+                furnitureInRoom.GetComponent<SpriteRenderer>().sortingLayerName = "Furniture";
+            }
+        }
+    }
+
+    public void newDay()
+    {
+        //loadSequenceImages(dayCounter);
+
+        resetActions();
+
+        GameObject.Find("ToDoText").GetComponent<ToDo>().setToDoFalse();
 
         room = Room.SLEEP;
-        this.GetComponent<SpriteRenderer>().sprite = getRoomSprite(room, day);
 
-        return ++day;
+        changeSpritesForNewDay();
+
+        setRoomSprites();
+
+        Vector3 newPosition = player.transform.position;
+
+        newPosition.x = leftSpawn.transform.position.x;
+
+        player.transform.position = newPosition;
+
+        player.GetComponent<SpriteRenderer>().flipX = false;
+
+        dayCounter++;
+    }
+
+    void changeSpritesForNewDay()
+    {
+        if (dayCounter == 2)
+        { }
+        else if (dayCounter == 3)
+        { }
+        else if (dayCounter == 4)
+        { }
+        else if (dayCounter == 5)
+        { }
+        else if (dayCounter == 6)
+        { }
+        else if (dayCounter == 7)
+        { }
+    }
+
+    void resetActions()
+    {
+        foreach (Transform room in GameObject.Find("Actions").transform)
+        {
+            foreach (Transform action in room)
+            {
+                Actions actionAction = action.GetComponent<Actions>();
+
+                if (actionAction != null)
+                {
+                    actionAction.setDefaultActiveDone();
+                }
+            }
+        }
     }
 }
 
