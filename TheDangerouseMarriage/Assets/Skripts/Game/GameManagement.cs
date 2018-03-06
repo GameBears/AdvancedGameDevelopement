@@ -256,6 +256,7 @@ public class GameManagement : MonoBehaviour
         player.GetComponent<SpriteRenderer>().flipX = false;
 
         dayCounter++;
+        setDayWatch();
     }
 
     void changeSpritesForNewDay()
@@ -288,6 +289,41 @@ public class GameManagement : MonoBehaviour
                 }
             }
         }
+    }
+
+    void setDayWatch()
+    {
+        GameObject.Find("DayWatch").GetComponent<Text>().text = "Day " + getRealDay();
+    }
+
+    int getRealDay()
+    {
+        if (dayCounter == 2)
+        {
+            return 2;
+        }
+        else if (dayCounter == 3)
+        {
+            return 5;
+        }
+        else if (dayCounter == 4)
+        {
+            return 10;
+        }
+        else if (dayCounter == 5)
+        {
+            return 20;
+        }
+        else if (dayCounter == 6)
+        {
+            return 32;
+        }
+        else if (dayCounter == 7)
+        {
+            return 45;
+        }
+
+        return 1;
     }
 }
 

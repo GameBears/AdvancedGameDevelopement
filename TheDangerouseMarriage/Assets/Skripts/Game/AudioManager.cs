@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (manager.room == Room.FLOOR && oldRoom != manager.room)
+        /*if (manager.room == Room.FLOOR && oldRoom != manager.room)
         {
             audio.clip = floorAudio;
             audio.Play();
@@ -35,6 +35,6 @@ public class AudioManager : MonoBehaviour {
                 oldRoom = manager.room;
             }
         }
-
+        */
 	}
 }
