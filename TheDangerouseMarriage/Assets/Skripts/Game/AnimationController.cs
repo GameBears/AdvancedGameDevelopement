@@ -12,15 +12,17 @@ public class AnimationController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+        if (!GameObject.Find("Background").GetComponent<GameManagement>().waitForNewDay)
         {
-            anim.SetInteger("State", 1);
-        }
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                anim.SetInteger("State", 1);
+            }
 
-        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            anim.SetInteger("State", 0);
+            if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                anim.SetInteger("State", 0);
+            }
         }
-
     }
 }

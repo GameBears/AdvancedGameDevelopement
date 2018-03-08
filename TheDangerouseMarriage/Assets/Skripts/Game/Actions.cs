@@ -22,6 +22,7 @@ public enum Action
 }
 
 public class Actions : MonoBehaviour {
+    static bool gotNumber = false;
     ToDo toDo;
     public bool isSideQuest = false;
     public bool done = false;
@@ -93,7 +94,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "I cant use it now.";
+            infoText.text = "Kim: \"I cant use it now. I have to prepare something.\"";
         }
     }
 
@@ -101,10 +102,10 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            infoText.text = "I have now some food in my hands.";
+            infoText.text = "Kim: \"I have now some food in my hands.\"";
             done = true;
 
-            Actions cookFood = GameObject.Find("cook food").GetComponent<Actions>();
+            Actions cookFood = GameObject.Find("Stove").GetComponent<Actions>();
 
             if (cookFood != null)
             {
@@ -113,7 +114,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "I have already got some food from the fridge.";
+            infoText.text = "Kim: \"I have already got some food from the fridge.\"";
         }
     }
 
@@ -121,10 +122,10 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            infoText.text = "I have cooked some food.";
+            infoText.text = "Kim: \"I have some cooked food in my hands now.\"";
             done = true;
 
-            Actions serveFood = GameObject.Find("serve food").GetComponent<Actions>();
+            Actions serveFood = GameObject.Find("Table").GetComponent<Actions>();
 
             if (serveFood != null)
             {
@@ -133,7 +134,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "I have already cooked some food.";
+            infoText.text = "Kim: \"I have already cooked some food.\"";
         }
     }
 
@@ -146,7 +147,7 @@ public class Actions : MonoBehaviour {
 
             if (gameManager.getDay() == 1)
             {
-                infoText.text = "Kim: \"I am happy to see his smile while he eat this meal.\"";
+                infoText.text = "Kim: \"I am happy to see eat this meal together.\"";
             }
             else if (gameManager.getDay() == 2)
             {
@@ -154,7 +155,7 @@ public class Actions : MonoBehaviour {
             }
             else if (gameManager.getDay() == 3)
             {
-                infoText.text = "Kim: \"Today I made him his favorite meal. He will be happy about it.\"";
+                infoText.text = "Kim: \"Today I made our favorite meal.\"";
             }
             else if (gameManager.getDay() == 4)
             {
@@ -224,7 +225,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "I have already served the food.";
+            infoText.text = "Kim: \"I have already served the food.\"";
         }
     }
 
@@ -237,7 +238,7 @@ public class Actions : MonoBehaviour {
 
             if (gameManager.getDay() == 1)
             {
-                infoText.text = "Kim: \"A plate, another plate and the silverware not forgotten .... So finished.\"";
+                infoText.text = "Kim: \"A plate, another plate and the silverware not forgotten .... now I finished.\"";
             }
             else if (gameManager.getDay() == 2)
             {
@@ -295,7 +296,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "The dishes are clean.";
+            infoText.text = "Kim: \"The dishes are clean.\"";
         }
     }
 
@@ -348,7 +349,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Alex: \"This bin is empty.\"";
+            infoText.text = "Kim: \"This bin is already empty.\"";
         }
     }
 
@@ -356,7 +357,7 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            GameObject.Find("vacuum").GetComponent<Actions>().active = true;
+            GameObject.Find("mud1").GetComponent<Actions>().active = true;
 
             infoText.text = "Kim: \"I have now the vacuum cleaner in my hands.\"";
             done = true;
@@ -441,7 +442,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "I do not need to vacuum anymore.";
+            infoText.text = "Kim: \"I do not need to vacuum anymore.\"";
         }
     }
 
@@ -449,8 +450,8 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            GameObject.Find("window1").GetComponent<Actions>().active = true;
-            GameObject.Find("window2").GetComponent<Actions>().active = true;
+            GameObject.Find("Window1").GetComponent<Actions>().active = true;
+            GameObject.Find("Window2").GetComponent<Actions>().active = true;
 
             infoText.text = "Kim: \"I am now ready to clean the windows.\"";
             done = true;
@@ -469,10 +470,10 @@ public class Actions : MonoBehaviour {
             int numWindowsclean = 0;
             string output = "Kim: \"I've cleaned this window.";
 
-            if (GameObject.Find("window1").GetComponent<Actions>().done)
+            if (GameObject.Find("Window1").GetComponent<Actions>().done)
                 numWindowsclean++;
 
-            if (GameObject.Find("window2").GetComponent<Actions>().done)
+            if (GameObject.Find("Window2").GetComponent<Actions>().done)
                 numWindowsclean++;
 
             if (numWindowsclean == 2)
@@ -481,26 +482,26 @@ public class Actions : MonoBehaviour {
 
                 if (gameManager.getDay() == 1)
                 {
-                    infoText.text = "Kim: \"A clear view is the alpha and omega.\"";
+                    output = "Kim: \"A clear view is the alpha and omega.\"";
                 }
                 else if (gameManager.getDay() == 2)
                 {
-                    infoText.text = "Kim: \"The cloud looks like a sheep ...\"";
+                    output = "Kim: \"The cloud looks like a sheep ...\"";
                 }
                 else if (gameManager.getDay() == 3)
                 {
-                    infoText.text = "Kim: \"With a clear view, the whole situation can be perceived differently.\"";
+                    output = "Kim: \"With a clear view, the whole situation can be perceived differently.\"";
                 }
                 else if (gameManager.getDay() == 4)
                 {
-                    infoText.text = "Alex: \"...\"";
+                    output = "Alex: \"...\"";
                 }
                 else if (gameManager.getDay() == 5)
                 {
                     if (counter == 0)
                     {
                         toDo.doWindow = false;
-                        infoText.text = "Alex: \"Is it foggy outside or why do I see so badly through the windows? ... you have done this? ... Please make it better.\"";
+                        output = "Alex: \"Is it foggy outside or why do I see so badly through the windows? ... you have done this? ... Please make it better.\"";
                         counter++;
                         setDefaultActiveDone();
                         GameObject.Find("get bucket").GetComponent<Actions>().setDefaultActiveDone();
@@ -509,7 +510,7 @@ public class Actions : MonoBehaviour {
                     }
                     else
                     {
-                        infoText.text = "Alex: \"Do you see? Now is it much better.\"";
+                        output = "Alex: \"Do you see? Now is it much better.\"";
                         counter = 0;
                     }
                 }
@@ -518,7 +519,7 @@ public class Actions : MonoBehaviour {
                     if (counter == 0)
                     {
                         toDo.doWindow = false;
-                        infoText.text = "Alex: \"Are you doing this on purpose or why are the windows not clean yet?\"";
+                        output = "Alex: \"Are you doing this on purpose or why are the windows not clean yet?\"";
                         counter++;
                         setDefaultActiveDone();
                         GameObject.Find("get bucket").GetComponent<Actions>().setDefaultActiveDone();
@@ -528,7 +529,7 @@ public class Actions : MonoBehaviour {
                     else if (counter == 1)
                     {
                         toDo.doWindow = false;
-                        infoText.text = "Alex: \"Did you forget what cleanliness means?\"";
+                        output = "Alex: \"Did you forget what cleanliness means?\"";
                         counter++;
                         setDefaultActiveDone();
                         GameObject.Find("get bucket").GetComponent<Actions>().setDefaultActiveDone();
@@ -537,13 +538,13 @@ public class Actions : MonoBehaviour {
                     }
                     else
                     {
-                        infoText.text = "Alex: \"Oh, here you go.\"";
+                        output = "Alex: \"Oh, here you go.\"";
                         counter = 0;
                     }
                 }
                 else if (gameManager.getDay() == 7)
                 {
-                    infoText.text = "Alex: \"If I came to the window, I would clean it myself. But apparently that does not interest you.\"";
+                    output = "Alex: \"If I came to the window, I would clean it myself. But apparently that does not interest you.\"";
                 }
             }
             else
@@ -607,41 +608,174 @@ public class Actions : MonoBehaviour {
             }
             else
             {
-                infoText.text = "I have already heard what's going on.";
+                infoText.text = "Kim: \"I have already heard what's going on.\"";
             }
         }
     }
 
     void lookTV()
     {
+        if (counter >= 2)
+        {
+            infoText.text = "Alex: \"Stop it. I am watching this.\"";
+            return;
+        }
+
         if (!done)
         {
+            if (gameManager.getDay() > 2)
+            {
+                counter++;
+            }
+
+            if (gameManager.getDay() == 1)
+            {
+                infoText.text = "TV: \"... and now little kittens running around ...\"";
+            }
+            else if (gameManager.getDay() == 2)
+            {
+                infoText.text = "TV: \"... great fire kills dozens of people ... many injured ...\"";
+            }
+            else if (gameManager.getDay() == 3)
+            {
+                infoText.text = "TV: \"... it's not what it looks like, honey ...\"";
+            }
+            else if (gameManager.getDay() == 4)
+            {
+                infoText.text = "TV: \"... new study proofs ... important news are important ...\"";
+            }
+            else if (gameManager.getDay() == 5)
+            {
+                infoText.text = "TV: \"... little kitten saved by fireman ...\"";
+            }
+            else if (gameManager.getDay() == 6)
+            {
+                infoText.text = "TV: \"... nobel prize for phyisics goes to ... Elbert Halsenstein ...\"";
+            }
+            else if (gameManager.getDay() == 7)
+            {
+                infoText.text = "TV: \"... revolution in IT costs lots of jobs ...\"";
+            }
+
+            done = true;
         }
         else
         {
-
+            infoText.text = "Kim: \"I watched enough TV for today.\"";
         }
     }
 
     void newsPaper()
     {
+        if (counter >= 2)
+        {
+            infoText.text = "Alex: \"Dont go everytime outside. Come in.\"";
+            return;
+        }
+
         if (!done)
         {
+            if (gameManager.getDay() > 2)
+            {
+                counter++;
+            }
+
+            if (gameManager.getDay() == 1)
+            {
+                infoText.text = "Headline: \"I'm strong with music\"";
+            }
+            else if (gameManager.getDay() == 2)
+            {
+                infoText.text = "Headline: \"Dispute over garbage fees\"";
+            }
+            else if (gameManager.getDay() == 3)
+            {
+                infoText.text = "Headline: \"Fireman saves child in great fire\"";
+            }
+            else if (gameManager.getDay() == 4)
+            {
+                infoText.text = "Headline: \"On the way to the new church\"";
+            }
+            else if (gameManager.getDay() == 5)
+            {
+                infoText.text = "Newspaper: \"Violence in relationship ... call this number\"";
+                gotNumber = true;
+            }
+            else if (gameManager.getDay() == 6)
+            {
+                infoText.text = "Headline: \"New skating place\"";
+            }
+            else if (gameManager.getDay() == 7)
+            {
+                infoText.text = "Headline: \"The slightly different school\"";
+            }
+
+            done = true;
         }
         else
         {
-
+            infoText.text = "Kim: \"I have read that newspaper already.\"";
         }
     }
 
     void usePhone()
     {
+        if (counter >= 2)
+        {
+            infoText.text = "Alex: \"You're always just slobbering, is there nothing more important to do?.\"";
+            return;
+        }
+
         if (!done)
         {
+            if (gameManager.getDay() > 2)
+            {
+                counter++;
+            }
+
+            if ((gameManager.getDay() == 5 ||
+                gameManager.getDay() == 6 ||
+                gameManager.getDay() == 7) && gotNumber)
+            {
+                //Ende 2
+                infoText.text = "Kim: \"Help me please .....\"";
+                gameManager.showGoodEnding();
+            }
+
+            if (gameManager.getDay() == 1)
+            {
+                infoText.text = "Kim: \"... Hi mom ... We've moved in without troubles...\"";
+            }
+            else if (gameManager.getDay() == 2)
+            {
+                infoText.text = "Kim: \"... Hi mom ... yeah ... erverything is fine ... love you ...\"";
+            }
+            else if (gameManager.getDay() == 3)
+            {
+                infoText.text = "Kim: \"... Hi mom ... he's fine ... you dont have do worry ...\"";
+            }
+            else if (gameManager.getDay() == 4)
+            {
+                infoText.text = "Kim: \"... Hi mom ... my voice sounds weird? ... no everything is fine  ...\"";
+            }
+            else if (gameManager.getDay() == 5)
+            {
+                infoText.text = "Kim: \"... Hi mom ... no i have no time ... you can't come over ...\"";
+            }
+            else if (gameManager.getDay() == 6)
+            {
+                infoText.text = "Kim: \"... Hi mom ... you cant say that ... he has been through a lot ...\"";
+            }
+            else if (gameManager.getDay() == 7)
+            {
+                infoText.text = "Kim: \"... Hi mom ... i dont know ... i have no time ... sorry ...\"";
+            }
+
+            done = true;
         }
         else
         {
-
+            infoText.text = "Kim: \"I dont know who i should phone now ... maybe later.\"";
         }
     }
 

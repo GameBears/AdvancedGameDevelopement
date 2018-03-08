@@ -41,9 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: NotVisible
+    uniqueID: 4082499895
+    locked: 0
   - name: Background
     uniqueID: 542413393
     locked: 0
-  - name: Foreground
+  - name: Furniture
     uniqueID: 1956028259
+    locked: 0
+  - name: Player
+    uniqueID: 3967029107
+    locked: 0
+  - name: Items
+    uniqueID: 3344856671
     locked: 0

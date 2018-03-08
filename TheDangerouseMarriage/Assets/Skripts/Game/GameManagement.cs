@@ -15,6 +15,9 @@ public enum Room
 
 public class GameManagement : MonoBehaviour
 {
+    public bool waitForNewDay = false;
+    public float waitForNewDayWaitTime = 1.0f;
+    float waitForNewDayStart = 0;
     GameObject player, leftSpawn, rightSpawn, furniture;
     //Queue<Sprite> sequence = new Queue<Sprite>();
 
@@ -45,7 +48,7 @@ public class GameManagement : MonoBehaviour
         furniture = GameObject.Find("Furniture");
         oldPlayerPosition = player.transform.position;
 
-        newDay();
+        doNewDay();
         setRoomSprites();
         oldRoom = room;
     }
@@ -53,7 +56,30 @@ public class GameManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkPlayerOutOfSight();
+        if (waitForNewDay)
+        {
+            if (GameObject.Find("InfoText").GetComponent<Text>().text == "")
+            {
+                if (waitForNewDayStart == 0)
+                {
+                    waitForNewDayStart = Time.realtimeSinceStartup;
+                }
+                else
+                {
+                    if (Mathf.Abs(waitForNewDayStart - Time.realtimeSinceStartup) > waitForNewDayWaitTime)
+                    {
+                        waitForNewDay = false;
+                        doNewDay();
+                        waitForNewDayStart = 0;
+                    }
+                }
+            }
+        }
+        else
+        {
+            player.GetComponent<PlayerController>().checkPlayerInput();
+            checkPlayerOutOfSight();
+        }
     }
 
     void checkPlayerOutOfSight()
@@ -235,6 +261,11 @@ public class GameManagement : MonoBehaviour
 
     public void newDay()
     {
+        waitForNewDay = true;
+    }
+
+    void doNewDay()
+    {
         //loadSequenceImages(dayCounter);
 
         resetActions();
@@ -257,6 +288,11 @@ public class GameManagement : MonoBehaviour
 
         dayCounter++;
         setDayWatch();
+
+        if (dayCounter > 7)
+        {
+            showBadEnding();
+        }
     }
 
     void changeSpritesForNewDay()
@@ -277,7 +313,7 @@ public class GameManagement : MonoBehaviour
 
     void resetActions()
     {
-        foreach (Transform room in GameObject.Find("Actions").transform)
+        foreach (Transform room in furniture.transform)
         {
             foreach (Transform action in room)
             {
@@ -324,6 +360,14 @@ public class GameManagement : MonoBehaviour
         }
 
         return 1;
+    }
+
+    public void showGoodEnding()
+    {
+    }
+
+    void showBadEnding()
+    {
     }
 }
 

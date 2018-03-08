@@ -7,15 +7,20 @@ public class PlayerController : MonoBehaviour {
     Room room;
     string roomString;
     string errorRoomString = "No such room!";
-    GameObject actions;
+    GameObject actions, furniture;
 
 	// Use this for initialization
 	void Start () {
         actions = GameObject.Find("Actions");
-	}
+        furniture = GameObject.Find("Furniture");
+    }
 	
 	// Update is called once per frame
 	void Update () {
+    }
+
+    public void checkPlayerInput()
+    {
         room = GameObject.Find("Background").GetComponent<GameManagement>().room;
         roomString = getRoomString(room);
 
@@ -30,25 +35,48 @@ public class PlayerController : MonoBehaviour {
             GetComponent<SpriteRenderer>().flipX = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) && roomString != errorRoomString)
+        if (roomString != errorRoomString)
         {
-            foreach (Transform room in actions.transform)
+            float minDist = float.MaxValue;
+            GameObject nearestObject = null;
+
+            foreach (Transform room in furniture.transform)
             {
                 if (room.name == roomString)
                 {
-                    foreach (Transform action in room)
+                    foreach (Transform obj in room)
                     {
-                        if (Mathf.Abs(transform.position.x - action.position.x) <= distanceAction)
-                        {
-                            //Something happens here
-                            Actions actionAction = action.GetComponent<Actions>();
+                        obj.GetComponent<SpriteRenderer>().color = Color.white;
+                        float dist = Mathf.Abs(transform.position.x - obj.transform.position.x);
 
-                            if (actionAction != null)
-                                actionAction.doAction();
+                        if (dist <= distanceAction)
+                        {
+                            if (dist < minDist && obj.GetComponent<Actions>() != null)
+                            {
+                                minDist = dist;
+                                nearestObject = obj.gameObject;
+                            }
                         }
                     }
                 }
             }
+
+            if (nearestObject != null && minDist != float.MaxValue)
+            {
+                Actions nearastAction = nearestObject.GetComponent<Actions>();
+
+                if (!nearastAction.done && nearastAction.active)
+                    nearestObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 0.7f, 1.0f);
+
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    nearastAction.doAction();
+                }
+            }
+        }
+        else
+        {
+            print("Room not found!");
         }
     }
 

@@ -81,11 +81,15 @@
     <Compile Include="Assets\Skripts\Game\Actions.cs" />
     <Compile Include="Assets\Skripts\Game\AnimationController.cs" />
     <Compile Include="Assets\Skripts\Game\AudioManager.cs" />
+    <Compile Include="Assets\Skripts\Game\Cutlery.cs" />
     <Compile Include="Assets\Skripts\Game\GameManagement.cs" />
     <Compile Include="Assets\Skripts\Game\InfoText.cs" />
+    <Compile Include="Assets\Skripts\Game\Offender.cs" />
     <Compile Include="Assets\Skripts\Game\Plant.cs" />
+    <Compile Include="Assets\Skripts\Game\Plate.cs" />
     <Compile Include="Assets\Skripts\Game\PlayerController.cs" />
     <Compile Include="Assets\Skripts\Game\PlayerInputEventsGame.cs" />
+    <Compile Include="Assets\Skripts\Game\Table.cs" />
     <Compile Include="Assets\Skripts\Game\ToDo.cs" />
     <Compile Include="Assets\Skripts\Menu\PlayerInputEventsMenu.cs" />
   </ItemGroup>
