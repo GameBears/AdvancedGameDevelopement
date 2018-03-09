@@ -1,0 +1,8 @@
+*.meta
+*.info
+*.resource
+*.ide
+*.dwlt
+*.asset
+*.buildreport
+*.asset
