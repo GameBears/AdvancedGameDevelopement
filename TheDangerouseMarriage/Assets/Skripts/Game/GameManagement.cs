@@ -274,8 +274,6 @@ public class GameManagement : MonoBehaviour
 
         room = Room.SLEEP;
 
-        changeSpritesForNewDay();
-
         setRoomSprites();
 
         Vector3 newPosition = player.transform.position;
@@ -288,27 +286,12 @@ public class GameManagement : MonoBehaviour
 
         dayCounter++;
         setDayWatch();
+        dayStartText();
 
         if (dayCounter > 7)
         {
             showBadEnding();
         }
-    }
-
-    void changeSpritesForNewDay()
-    {
-        if (dayCounter == 2)
-        { }
-        else if (dayCounter == 3)
-        { }
-        else if (dayCounter == 4)
-        { }
-        else if (dayCounter == 5)
-        { }
-        else if (dayCounter == 6)
-        { }
-        else if (dayCounter == 7)
-        { }
     }
 
     void resetActions()
@@ -329,7 +312,7 @@ public class GameManagement : MonoBehaviour
 
     void setDayWatch()
     {
-        GameObject.Find("DayWatch").GetComponent<Text>().text = "Day " + getRealDay();
+        GameObject.Find("DayWatch").GetComponent<Text>().text = "Tag " + getRealDay();
     }
 
     int getRealDay()
@@ -360,6 +343,40 @@ public class GameManagement : MonoBehaviour
         }
 
         return 1;
+    }
+
+    void dayStartText()
+    {
+        Text infoText = GameObject.Find("InfoText").GetComponent<Text>();
+
+        if (dayCounter == 1)
+        {
+            infoText.text = "Kim: \"Bald ist die Arbeit vorbei und wir können gemeinsam Zeit verbringen. Aber vorher muss ich noch einiges erledigen.\"";
+        }
+        else if (dayCounter == 2)
+        {
+            infoText.text = "Kim: \"Es ist immerso schön nach der Arbeit Zeit miteinander zu verbringen.\"";
+        }
+        else if (dayCounter == 3)
+        {
+            infoText.text = "Kim: \"So viele Arztbesuche mit ihm. Ich werde ihm einen schönen Tag bereiten\"";
+        }
+        else if (dayCounter == 4)
+        {
+            infoText.text = "Kim: \"Irgendwann wird es ihm schon besser gehen.\"";
+        }
+        else if (dayCounter == 5)
+        {
+            infoText.text = "Kim: \"Motivation für Tag 20.\"";
+        }
+        else if (dayCounter == 6)
+        {
+            infoText.text = "Kim: \"Motivation für Tag 32.\"";
+        }
+        else if (dayCounter == 7)
+        {
+            infoText.text = "Kim: \"Motivation für Tag 45.\"";
+        }
     }
 
     public void showGoodEnding()

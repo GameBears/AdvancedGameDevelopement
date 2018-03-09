@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    public bool isMale;
     public float speed = 0.5f, distanceAction = 1.0f;
+    public Color hervorhebungsFarbe;
     Room room;
     string roomString;
     string errorRoomString = "No such room!";
@@ -13,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
         actions = GameObject.Find("Actions");
         furniture = GameObject.Find("Furniture");
+        setColorSpriteRandom();
     }
 	
 	// Update is called once per frame
@@ -65,8 +68,8 @@ public class PlayerController : MonoBehaviour {
             {
                 Actions nearastAction = nearestObject.GetComponent<Actions>();
 
-                if (!nearastAction.done && nearastAction.active)
-                    nearestObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 0.7f, 1.0f);
+                //if (!nearastAction.done && nearastAction.active)
+                    nearestObject.GetComponent<SpriteRenderer>().color = hervorhebungsFarbe;
 
                 if (Input.GetKeyUp(KeyCode.Space))
                 {
@@ -105,6 +108,29 @@ public class PlayerController : MonoBehaviour {
         else
         {
             return errorRoomString;
+        }
+    }
+
+    void setColorSpriteRandom()
+    {
+        Color male = new Color(0.0f, 0.0f, 0.0f);
+        Color female = new Color(0.0f, 0.0f, 0.0f);
+
+        if (Random.value > 0.5f)
+        {
+            //Kim is female
+            print("Kim is female");
+            isMale = false;
+            
+            //Alex is male
+        }
+        else
+        {
+            //Kim is male
+            print("Kim is male");
+            isMale = true;
+
+            //Alex is female
         }
     }
 }

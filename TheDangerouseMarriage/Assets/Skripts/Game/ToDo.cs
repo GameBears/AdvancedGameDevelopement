@@ -25,19 +25,31 @@ public class ToDo : MonoBehaviour {
             gameManager.newDay();
         }
 
-        string[] toDoString = new string[5];
+        string[] toDoString = new string[6];
 
-        toDoString[0] = "Do Meal for Husband " + doMeal;
-        toDoString[1] = "Vacuum the Room " + doVacuum;
-        toDoString[2] = "Do the Garbage " + doGarbage;
-        toDoString[3] = "Clean the Dishes " + doDishes;
-        toDoString[4] = "Clean the Windows " + doWindow;
+        toDoString[0] = "ToDos für heute:";
 
-        string strNewToDo = toDoString[0] + "\n"
+        if (!doMeal)
+            toDoString[1] = "Essen vorbereiten ";
+
+        if (!doVacuum)
+            toDoString[2] = "Staubsaugen ";
+
+        if (!doGarbage)
+            toDoString[3] = "Müll rausbringen ";
+
+        if (!doDishes)
+            toDoString[4] = "Geschirr spülen ";
+
+        if (!doWindow)
+            toDoString[5] = "Fenster säubern ";
+
+        string strNewToDo = toDoString[0] + "\n\n"
             + toDoString[1] + "\n"
             + toDoString[2] + "\n"
             + toDoString[3] + "\n"
-            + toDoString[4];
+            + toDoString[4] + "\n"
+            + toDoString[5];
 
         if (strNewToDo != text.text)
         {
