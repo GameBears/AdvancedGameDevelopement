@@ -97,6 +97,7 @@
     <Compile Include="Assets\Skripts\Game\Table.cs" />
     <Compile Include="Assets\Skripts\Game\ToDo.cs" />
     <Compile Include="Assets\Skripts\Game\TrashBin.cs" />
+    <Compile Include="Assets\Skripts\Game\Window.cs" />
     <Compile Include="Assets\Skripts\Menu\PlayerInputEventsMenu.cs" />
   </ItemGroup>
   <ItemGroup>
