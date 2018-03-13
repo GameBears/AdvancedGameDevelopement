@@ -95,7 +95,21 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Kim: \"Ich kann das noch nicht machen. Ich muss noch etwas vorbereiten.\"";
+            if (!active && !done)
+            {
+                if (action == Action.DoMeal)
+                { infoText.text = "Kim: \"Ich sollte zunächst Essen aus dem Kühlschrank holen.\""; }
+                else if (action == Action.serveFood)
+                { infoText.text = "Kim: \"Ich sollte zunächst Essen vorbereiten, bevor ich den Tisch decke.\""; }
+                else if (action == Action.DoGarbage)
+                { infoText.text = "Kim: \"Ich sollte zunächst den Müll aus der Küche holen.\""; }
+                else if (action == Action.DoVacuum)
+                { infoText.text = "Kim: \"Ich benötige hierfür den Staubsauger.\""; }
+                else if (action == Action.DoWindow)
+                { infoText.text = "Kim: \"Ich benötige einen Eimer mit Wasser hierfür.\""; }
+                else
+                { infoText.text = "Kim: \"Ich kann das noch nicht machen. Ich muss noch etwas vorbereiten.\""; }
+            }
         }
     }
 
@@ -378,7 +392,10 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            GameObject.Find("mud1").GetComponent<Actions>().active = true;
+            foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
+            {
+                mud.GetComponent<Actions>().active = true;
+            }
 
             infoText.text = "Kim: \"Ich habe nun den Staubsauger in der Hand.\"";
             done = true;
@@ -393,72 +410,99 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            toDo.doVacuum = true;
             done = true;
+            bool allMudsRemoved = true;
 
-            if (gameManager.getDay() == 1)
+            foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
             {
-                infoText.text = "Kim: \"Ein sauberes Haus ist ein glückliches Haus.\"";
-            }
-            else if (gameManager.getDay() == 2)
-            {
-                infoText.text = "Kim: \"Woher kommt denn nur der ganze Staub wieder her?\"";
-            }
-            else if (gameManager.getDay() == 3)
-            {
-                infoText.text = "Kim: \"Vielleicht macht ihn ein staubfreies Zuhause gleich ein wenig glücklicher.\"";
-            }
-            else if (gameManager.getDay() == 4)
-            {
-                if (counter == 0)
+                if (!mud.GetComponent<Actions>().done)
                 {
-                    toDo.doVacuum = false;
-                    infoText.text = "Alex: \"Es liegt immer noch Staub rum. Kannst du den schnell wegmachen?\"";
-                    counter++;
-                    setDefaultActiveDone();
-                    GameObject.Find("vacuum cleaner").GetComponent<Actions>().setDefaultActiveDone();
-                }
-                else
-                {
-                    infoText.text = "Alex: \"Sieht gleich besser aus.\"";
-                    counter = 0;
+                    allMudsRemoved = false;
                 }
             }
-            else if (gameManager.getDay() == 5)
+
+            if (allMudsRemoved)
             {
-                infoText.text = "Alex: \"Beim nächsten Mal fegst du per Hand nach.\"";
+
+                toDo.doVacuum = true;
+
+                if (gameManager.getDay() == 1)
+                {
+                    infoText.text = "Kim: \"Ein sauberes Haus ist ein glückliches Haus.\"";
+                }
+                else if (gameManager.getDay() == 2)
+                {
+                    infoText.text = "Kim: \"Woher kommt denn nur der ganze Staub wieder her?\"";
+                }
+                else if (gameManager.getDay() == 3)
+                {
+                    infoText.text = "Kim: \"Vielleicht macht ihn ein staubfreies Zuhause gleich ein wenig glücklicher.\"";
+                }
+                else if (gameManager.getDay() == 4)
+                {
+                    if (counter == 0)
+                    {
+                        toDo.doVacuum = false;
+                        infoText.text = "Alex: \"Es liegt immer noch Staub rum. Kannst du den schnell wegmachen?\"";
+                        counter++;
+                        foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
+                        {
+                            mud.GetComponent<Actions>().setDefaultActiveDone();
+                        }
+                        GameObject.Find("vacuum cleaner").GetComponent<Actions>().setDefaultActiveDone();
+                    }
+                    else
+                    {
+                        infoText.text = "Alex: \"Sieht gleich besser aus.\"";
+                        counter = 0;
+                    }
+                }
+                else if (gameManager.getDay() == 5)
+                {
+                    infoText.text = "Alex: \"Beim nächsten Mal fegst du per Hand nach.\"";
+                }
+                else if (gameManager.getDay() == 6)
+                {
+                    if (counter == 0)
+                    {
+                        toDo.doVacuum = false;
+                        infoText.text = "Alex: \"Hast du vergessen zu saugen?\"";
+                        counter++;
+                        foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
+                        {
+                            mud.GetComponent<Actions>().setDefaultActiveDone();
+                        }
+                        GameObject.Find("get vacuum cleaner").GetComponent<Actions>().setDefaultActiveDone();
+                    }
+                    else
+                    {
+                        infoText.text = "Alex: \"Beim nächsten Mal bitte sofort machen.\"";
+                        counter = 0;
+                    }
+                }
+                else if (gameManager.getDay() == 7)
+                {
+                    if (counter == 0)
+                    {
+                        toDo.doVacuum = false;
+                        infoText.text = "Alex: \"Wir brauchen einen neuen Staubsauger, der scheint kaputt zu sein. Der verteilt den ganzen Schmutz nur noch.\"";
+                        counter++;
+                        foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
+                        {
+                            mud.GetComponent<Actions>().setDefaultActiveDone();
+                        }
+                        GameObject.Find("get vacuum cleaner").GetComponent<Actions>().setDefaultActiveDone();
+                    }
+                    else
+                    {
+                        infoText.text = "Alex: \"Oh...Es lag doch nur an deine Unfähigkeit.\"";
+                        counter = 0;
+                    }
+                }
             }
-            else if (gameManager.getDay() == 6)
+            else
             {
-                if (counter == 0)
-                {
-                    toDo.doVacuum = false;
-                    infoText.text = "Alex: \"Hast du vergessen zu saugen?\"";
-                    counter++;
-                    setDefaultActiveDone();
-                    GameObject.Find("get vacuum cleaner").GetComponent<Actions>().setDefaultActiveDone();
-                }
-                else
-                {
-                    infoText.text = "Alex: \"Beim nächsten Mal bitte sofort machen.\"";
-                    counter = 0;
-                }
-            }
-            else if (gameManager.getDay() == 7)
-            {
-                if (counter == 0)
-                {
-                    toDo.doVacuum = false;
-                    infoText.text = "Alex: \"Wir brauchen einen neuen Staubsauger, der scheint kaputt zu sein. Der verteilt den ganzen Schmutz nur noch.\"";
-                    counter++;
-                    setDefaultActiveDone();
-                    GameObject.Find("get vacuum cleaner").GetComponent<Actions>().setDefaultActiveDone();
-                }
-                else
-                {
-                    infoText.text = "Alex: \"Oh...Es lag doch nur an deine Unfähigkeit.\"";
-                    counter = 0;
-                }
+                infoText.text = "Kim: \"Dieser Staubhaufen ist nun beseitigt.\"";
             }
         }
         else
