@@ -384,7 +384,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Kim: \"Der Mülleimer ist leer.\"";
+            infoText.text = "Kim: \"Das habe ich schon erledigt.\"";
         }
     }
 
