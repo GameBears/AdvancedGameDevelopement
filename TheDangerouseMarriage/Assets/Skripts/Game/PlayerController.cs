@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
     string roomString;
     string errorRoomString = "No such room!";
     GameObject actions, furniture;
+    public Sprite femaleSprite;
+    public Sprite maleSprite;
 
 	// Use this for initialization
 	void Start () {
@@ -119,16 +121,16 @@ public class PlayerController : MonoBehaviour {
         if (Random.value > 0.5f)
         {
             //Kim is female
-            print("Kim is female");
             isMale = false;
+            GetComponent<SpriteRenderer>().sprite = femaleSprite;
             
             //Alex is male
         }
         else
         {
             //Kim is male
-            print("Kim is male");
             isMale = true;
+            GetComponent<SpriteRenderer>().sprite = maleSprite;
 
             //Alex is female
         }

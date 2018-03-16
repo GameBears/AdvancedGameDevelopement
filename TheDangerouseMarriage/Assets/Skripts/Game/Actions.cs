@@ -32,6 +32,8 @@ public class Actions : MonoBehaviour {
     Text infoText;
     public Action action;
     public int counter = 0;
+    string stove = "Stove", fridge = "Fridge", table = "Table", trashBinBig = "TrashBinBig",
+        mud = "mud", window1 = "Window1", window2 = "Window2", bucket = "bucket";
 
     public void setDefaultActiveDone()
     {
@@ -120,7 +122,7 @@ public class Actions : MonoBehaviour {
             infoText.text = "Kim: \"I habe nun Lebensmittel in der Hand.\"";
             done = true;
 
-            Actions cookFood = GameObject.Find("Stove").GetComponent<Actions>();
+            Actions cookFood = GameObject.Find(stove).GetComponent<Actions>();
 
             if (cookFood != null)
             {
@@ -140,7 +142,7 @@ public class Actions : MonoBehaviour {
             infoText.text = "Kim: \"Ich habe nun zubereitetes Essen in der Hand.\"";
             done = true;
 
-            Actions serveFood = GameObject.Find("Table").GetComponent<Actions>();
+            Actions serveFood = GameObject.Find(table).GetComponent<Actions>();
 
             if (serveFood != null)
             {
@@ -183,8 +185,8 @@ public class Actions : MonoBehaviour {
                     infoText.text = "Alex: \"Das kann man ja gar nicht essen. Das ist komplett übersalzen. Mach mir was anderes.\"";
                     toDo.doMeal = false;
                     setDefaultActiveDone();
-                    GameObject.Find("open fridge").GetComponent<Actions>().setDefaultActiveDone();
-                    GameObject.Find("cook food").GetComponent<Actions>().setDefaultActiveDone();
+                    GameObject.Find(fridge).GetComponent<Actions>().setDefaultActiveDone();
+                    GameObject.Find(stove).GetComponent<Actions>().setDefaultActiveDone();
                     counter++;
                 }
                 else
@@ -201,8 +203,8 @@ public class Actions : MonoBehaviour {
                     infoText.text = "Alex: \"Du hast schon besser gekocht. Das enttäuscht mich. Ich mach mir etwas selbst.\"";
                     toDo.doMeal = false;
                     setDefaultActiveDone();
-                    GameObject.Find("open fridge").GetComponent<Actions>().setDefaultActiveDone();
-                    GameObject.Find("cook food").GetComponent<Actions>().setDefaultActiveDone();
+                    GameObject.Find(fridge).GetComponent<Actions>().setDefaultActiveDone();
+                    GameObject.Find(stove).GetComponent<Actions>().setDefaultActiveDone();
                     counter++;
                 }
                 else
@@ -218,8 +220,8 @@ public class Actions : MonoBehaviour {
                     infoText.text = "Alex: \"Man kann sich beim Kochen nicht mehr auf dich verlassen. Du warst früher so gut darin.\"";
                     toDo.doMeal = false;
                     setDefaultActiveDone();
-                    GameObject.Find("open fridge").GetComponent<Actions>().setDefaultActiveDone();
-                    GameObject.Find("cook food").GetComponent<Actions>().setDefaultActiveDone();
+                    GameObject.Find(fridge).GetComponent<Actions>().setDefaultActiveDone();
+                    GameObject.Find(stove).GetComponent<Actions>().setDefaultActiveDone();
                     counter++;
                 }
                 else if (counter == 1)
@@ -227,8 +229,8 @@ public class Actions : MonoBehaviour {
                     infoText.text = "Alex: \"Nein, schmeckt immer noch nicht...\"";
                     toDo.doMeal = false;
                     setDefaultActiveDone();
-                    GameObject.Find("open fridge").GetComponent<Actions>().setDefaultActiveDone();
-                    GameObject.Find("cook food").GetComponent<Actions>().setDefaultActiveDone();
+                    GameObject.Find(fridge).GetComponent<Actions>().setDefaultActiveDone();
+                    GameObject.Find(stove).GetComponent<Actions>().setDefaultActiveDone();
                     counter++;
                 }
                 else
@@ -322,7 +324,7 @@ public class Actions : MonoBehaviour {
             infoText.text = "Kim: \"Ich habe nun den Müllbeutel in der Hand.\"";
             done = true;
 
-            Actions doGarbage = GameObject.Find("TrashBinBig").GetComponent<Actions>();
+            Actions doGarbage = GameObject.Find(trashBinBig).GetComponent<Actions>();
 
             if (doGarbage != null)
             {
@@ -392,7 +394,7 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
+            foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
             {
                 mud.GetComponent<Actions>().active = true;
             }
@@ -413,7 +415,7 @@ public class Actions : MonoBehaviour {
             done = true;
             bool allMudsRemoved = true;
 
-            foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
+            foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
             {
                 if (!mud.GetComponent<Actions>().done)
                 {
@@ -445,7 +447,7 @@ public class Actions : MonoBehaviour {
                         toDo.doVacuum = false;
                         infoText.text = "Alex: \"Es liegt immer noch Staub rum. Kannst du den schnell wegmachen?\"";
                         counter++;
-                        foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
+                        foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
                         {
                             mud.GetComponent<Actions>().setDefaultActiveDone();
                         }
@@ -468,7 +470,7 @@ public class Actions : MonoBehaviour {
                         toDo.doVacuum = false;
                         infoText.text = "Alex: \"Hast du vergessen zu saugen?\"";
                         counter++;
-                        foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
+                        foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
                         {
                             mud.GetComponent<Actions>().setDefaultActiveDone();
                         }
@@ -487,7 +489,7 @@ public class Actions : MonoBehaviour {
                         toDo.doVacuum = false;
                         infoText.text = "Alex: \"Wir brauchen einen neuen Staubsauger, der scheint kaputt zu sein. Der verteilt den ganzen Schmutz nur noch.\"";
                         counter++;
-                        foreach (GameObject mud in GameObject.FindGameObjectsWithTag("mud"))
+                        foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
                         {
                             mud.GetComponent<Actions>().setDefaultActiveDone();
                         }
@@ -515,8 +517,8 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            GameObject.Find("Window1").GetComponent<Actions>().active = true;
-            GameObject.Find("Window2").GetComponent<Actions>().active = true;
+            GameObject.Find(window1).GetComponent<Actions>().active = true;
+            GameObject.Find(window2).GetComponent<Actions>().active = true;
 
             infoText.text = "Kim: \"Nun kann ich die Fenster putzen.\"";
             done = true;
@@ -535,10 +537,10 @@ public class Actions : MonoBehaviour {
             int numWindowsclean = 0;
             string output = "Kim: \"Dieses Fenster sieht sauber aus.";
 
-            if (GameObject.Find("Window1").GetComponent<Actions>().done)
+            if (GameObject.Find(window1).GetComponent<Actions>().done)
                 numWindowsclean++;
 
-            if (GameObject.Find("Window2").GetComponent<Actions>().done)
+            if (GameObject.Find(window2).GetComponent<Actions>().done)
                 numWindowsclean++;
 
             if (numWindowsclean == 2)
@@ -569,9 +571,9 @@ public class Actions : MonoBehaviour {
                         output = "Alex: \"Ist es neblig draußen oder warum sieht man so schlecht durch Fenster? … Ach das warst du? ... Mach das bitte besser.\"";
                         counter++;
                         setDefaultActiveDone();
-                        GameObject.Find("get bucket").GetComponent<Actions>().setDefaultActiveDone();
-                        GameObject.Find("window1").GetComponent<Actions>().setDefaultActiveDone();
-                        GameObject.Find("window2").GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(bucket).GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(window1).GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(window2).GetComponent<Actions>().setDefaultActiveDone();
                     }
                     else
                     {
@@ -587,9 +589,9 @@ public class Actions : MonoBehaviour {
                         output = "Alex: \"Machst du das mit Absicht oder warum sind die Fenster noch nicht sauber?\"";
                         counter++;
                         setDefaultActiveDone();
-                        GameObject.Find("get bucket").GetComponent<Actions>().setDefaultActiveDone();
-                        GameObject.Find("window1").GetComponent<Actions>().setDefaultActiveDone();
-                        GameObject.Find("window2").GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(bucket).GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(window1).GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(window2).GetComponent<Actions>().setDefaultActiveDone();
                     }
                     else if (counter == 1)
                     {
@@ -597,9 +599,9 @@ public class Actions : MonoBehaviour {
                         output = "Alex: \"Hast du vergessen, was Sauberkeit bedeutet?\"";
                         counter++;
                         setDefaultActiveDone();
-                        GameObject.Find("get bucket").GetComponent<Actions>().setDefaultActiveDone();
-                        GameObject.Find("window1").GetComponent<Actions>().setDefaultActiveDone();
-                        GameObject.Find("window2").GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(bucket).GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(window1).GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(window2).GetComponent<Actions>().setDefaultActiveDone();
                     }
                     else
                     {
