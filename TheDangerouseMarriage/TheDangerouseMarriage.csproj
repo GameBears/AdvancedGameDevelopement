@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.0p5</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -85,6 +83,7 @@
     <Compile Include="Assets\Skripts\Game\AudioManager.cs" />
     <Compile Include="Assets\Skripts\Game\Calender.cs" />
     <Compile Include="Assets\Skripts\Game\Cutlery.cs" />
+    <Compile Include="Assets\Skripts\Game\Fridge.cs" />
     <Compile Include="Assets\Skripts\Game\GameManagement.cs" />
     <Compile Include="Assets\Skripts\Game\InfoText.cs" />
     <Compile Include="Assets\Skripts\Game\Mud.cs" />
@@ -98,6 +97,7 @@
     <Compile Include="Assets\Skripts\Game\RadioCable.cs" />
     <Compile Include="Assets\Skripts\Game\Shoes.cs" />
     <Compile Include="Assets\Skripts\Game\SpriteChanger.cs" />
+    <Compile Include="Assets\Skripts\Game\Stove.cs" />
     <Compile Include="Assets\Skripts\Game\Table.cs" />
     <Compile Include="Assets\Skripts\Game\ToDo.cs" />
     <Compile Include="Assets\Skripts\Game\TrashBin.cs" />
