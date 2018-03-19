@@ -806,7 +806,7 @@ SpriteRenderer:
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 82108c88f828ed6408983e2d11be6337, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c08edb7ae8cd04f4f930c87aa0988f39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1178,6 +1178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 210158586}
   - component: {fileID: 210158587}
+  - component: {fileID: 210158588}
   m_Layer: 0
   m_Name: karte
   m_TagString: Untagged
@@ -1240,6 +1241,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &210158588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 210158585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 3
+  dayToHide: 5
+  destroyable: 0
+  dayToDestroy: 0
+  destroyedObject: {fileID: 0}
 --- !u!1 &237523987
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,7 +3601,7 @@ SpriteRenderer:
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 82108c88f828ed6408983e2d11be6337, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c08edb7ae8cd04f4f930c87aa0988f39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4468,6 +4485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529340164}
   - component: {fileID: 1529340165}
+  - component: {fileID: 1529340166}
   m_Layer: 0
   m_Name: rollstuhl
   m_TagString: Untagged
@@ -4530,6 +4548,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1529340166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1529340163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 3
+  dayToHide: 0
+  destroyable: 0
+  dayToDestroy: 0
+  destroyedObject: {fileID: 0}
 --- !u!1 &1565081579
 GameObject:
   m_ObjectHideFlags: 0
@@ -4539,6 +4573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1565081580}
   - component: {fileID: 1565081581}
+  - component: {fileID: 1565081582}
   m_Layer: 0
   m_Name: blumenvase1
   m_TagString: Untagged
@@ -4601,6 +4636,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1565081582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1565081579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 3
+  dayToHide: 5
+  destroyable: 0
+  dayToDestroy: 0
+  destroyedObject: {fileID: 0}
 --- !u!1 &1567083459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4681,6 +4732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1573150978}
   - component: {fileID: 1573150979}
+  - component: {fileID: 1573150980}
   m_Layer: 0
   m_Name: blumenvase2
   m_TagString: Untagged
@@ -4743,6 +4795,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1573150980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1573150977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 3
+  dayToHide: 5
+  destroyable: 0
+  dayToDestroy: 0
+  destroyedObject: {fileID: 0}
 --- !u!1 &1666902355
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,6 +5429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1776291104}
   - component: {fileID: 1776291105}
+  - component: {fileID: 1776291106}
   m_Layer: 0
   m_Name: briefe
   m_TagString: Untagged
@@ -5423,6 +5492,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1776291106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776291103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 3
+  dayToHide: 5
+  destroyable: 0
+  dayToDestroy: 0
+  destroyedObject: {fileID: 0}
 --- !u!1 &1813641458
 GameObject:
   m_ObjectHideFlags: 0

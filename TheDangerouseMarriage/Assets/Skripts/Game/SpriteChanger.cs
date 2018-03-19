@@ -41,11 +41,11 @@ public class SpriteChanger : MonoBehaviour {
                 }
             }
 
-            if (gameManager.getDay() >= dayToHide)
+            if (gameManager.getDay() >= dayToHide && dayToHide != 0)
             {
                 visible = false;
             }
-            else if (gameManager.getDay() >= dayToShow)
+            else if (gameManager.getDay() >= dayToShow && dayToShow != 0)
             {
                 visible = true;
             }
