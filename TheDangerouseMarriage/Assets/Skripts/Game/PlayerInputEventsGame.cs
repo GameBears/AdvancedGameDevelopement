@@ -9,7 +9,7 @@ public class PlayerInputEventsGame : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene("Menu");
+            Application.Quit();
         }
     }
 }

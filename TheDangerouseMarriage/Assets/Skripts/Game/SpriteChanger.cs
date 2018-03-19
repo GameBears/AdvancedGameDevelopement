@@ -26,6 +26,9 @@ public class SpriteChanger : MonoBehaviour {
 
     public void refresh()
     {
+        if (gameManager == null)
+            return;
+
         if (lastSpriteChange != gameManager.getDay())
         {
             lastSpriteChange = gameManager.getDay();
