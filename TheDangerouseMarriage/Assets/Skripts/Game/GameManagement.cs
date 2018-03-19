@@ -248,13 +248,26 @@ public class GameManagement : MonoBehaviour
 
     void showFurnitureInRoom(string name)
     {
-        Transform furnitureRoom= furniture.transform.Find(name);
+        Transform furnitureRoom = furniture.transform.Find(name);
 
         if (furnitureRoom != null)
         {
             foreach (Transform furnitureInRoom in furnitureRoom)
             {
-                furnitureInRoom.GetComponent<SpriteRenderer>().sortingLayerName = "Furniture";
+                SpriteChanger spriteChanger = furnitureInRoom.GetComponent<SpriteChanger>();
+                string layerName = "Furniture";
+
+                if (spriteChanger != null)
+                {
+                    spriteChanger.refresh();
+
+                    if (!spriteChanger.isVisible())
+                    {
+                        layerName = "NotVisible";
+                    }
+                }
+
+                furnitureInRoom.GetComponent<SpriteRenderer>().sortingLayerName = layerName;
             }
         }
     }
@@ -274,8 +287,6 @@ public class GameManagement : MonoBehaviour
 
         room = Room.SLEEP;
 
-        setRoomSprites();
-
         Vector3 newPosition = player.transform.position;
 
         newPosition.x = leftSpawn.transform.position.x;
@@ -287,6 +298,8 @@ public class GameManagement : MonoBehaviour
         dayCounter++;
         setDayWatch();
         dayStartText();
+
+        setRoomSprites();
 
         if (dayCounter > 7)
         {
