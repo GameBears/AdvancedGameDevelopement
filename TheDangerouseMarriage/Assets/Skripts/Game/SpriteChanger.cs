@@ -16,7 +16,7 @@ public class SpriteChanger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         gameManager = GameObject.Find("Background").GetComponent<GameManagement>();
-        spriteRenderer = GameObject.Find("Background").GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
