@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpriteChanger : MonoBehaviour {
     bool visible = false;
-    public int dayToShow;
+    public int dayToShow = 1;
     public int dayToHide;
     public bool destroyable = false;
     public int dayToDestroy;
