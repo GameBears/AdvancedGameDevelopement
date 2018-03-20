@@ -32,8 +32,8 @@ public class Actions : MonoBehaviour {
     Text infoText;
     public Action action;
     public int counter = 0;
-    string stove = "Stove", fridge = "Fridge", table = "Table", trashBinBig = "TrashBinBig",
-        mud = "mud", window1 = "Window1", window2 = "Window2", bucket = "bucket";
+    string stove = "Stove", fridge = "Fridge", table = "Table", trashBinBig = "TrashBinBig", trash = "Trash",
+        mud = "mud", window1 = "Window1", window2 = "Window2", bucket = "bucket", vacuumCleaner = "vacuum cleaner";
 
     public void setDefaultActiveDone()
     {
@@ -371,6 +371,7 @@ public class Actions : MonoBehaviour {
                     toDo.doGarbage = false;
                     infoText.text = "Alex: \"Du hast was im Mülleimer übersehen ... nochmal.\"";
                     counter++;
+                    GameObject.Find(trash).GetComponent<Actions>().setDefaultActiveDone();
                     setDefaultActiveDone();
                 }
                 else
@@ -451,7 +452,7 @@ public class Actions : MonoBehaviour {
                         {
                             mud.GetComponent<Actions>().setDefaultActiveDone();
                         }
-                        GameObject.Find("vacuum cleaner").GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(vacuumCleaner).GetComponent<Actions>().setDefaultActiveDone();
                     }
                     else
                     {
@@ -474,7 +475,7 @@ public class Actions : MonoBehaviour {
                         {
                             mud.GetComponent<Actions>().setDefaultActiveDone();
                         }
-                        GameObject.Find("get vacuum cleaner").GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(vacuumCleaner).GetComponent<Actions>().setDefaultActiveDone();
                     }
                     else
                     {
@@ -493,7 +494,7 @@ public class Actions : MonoBehaviour {
                         {
                             mud.GetComponent<Actions>().setDefaultActiveDone();
                         }
-                        GameObject.Find("get vacuum cleaner").GetComponent<Actions>().setDefaultActiveDone();
+                        GameObject.Find(vacuumCleaner).GetComponent<Actions>().setDefaultActiveDone();
                     }
                     else
                     {
