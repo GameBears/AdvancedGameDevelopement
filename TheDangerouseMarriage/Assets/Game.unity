@@ -1050,8 +1050,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 162002336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.522, y: 8.31, z: 10}
-  m_LocalScale: {x: 0.881498, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: 1.75, z: 10}
+  m_LocalScale: {x: 0.83330667, y: 0.63803095, z: 1}
   m_Children: []
   m_Father: {fileID: 668358689}
   m_RootOrder: 26
@@ -1088,7 +1088,7 @@ SpriteRenderer:
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 546741f7147c8f449ac9c43a0f2b47da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2cb9052e8e5bf444a0bf970305f84bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1504,6 +1504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 416446932}
   - component: {fileID: 416446933}
+  - component: {fileID: 416446934}
   m_Layer: 0
   m_Name: urkunde
   m_TagString: Untagged
@@ -1556,7 +1557,7 @@ SpriteRenderer:
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8675bb09e13a8714495c8d132aed554f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84316e01acfc1d14d9a647c188896f5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1566,6 +1567,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &416446934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416446931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 1
+  dayToHide: 0
+  destroyable: 1
+  dayToDestroy: 3
+  destroyedObject: {fileID: 21300000, guid: 9c7f060595953bd468955723ba7f20bc, type: 3}
 --- !u!1 &421413029
 GameObject:
   m_ObjectHideFlags: 0
@@ -2880,6 +2897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 958449487}
   - component: {fileID: 958449488}
+  - component: {fileID: 958449489}
   m_Layer: 0
   m_Name: foto_feuerwehr
   m_TagString: Untagged
@@ -2932,7 +2950,7 @@ SpriteRenderer:
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7d4a58fed900f954fbf18cf3e96ec7b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3aae882e685621489ef9bea7b6fda84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2942,6 +2960,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &958449489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 958449486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 1
+  dayToHide: 0
+  destroyable: 1
+  dayToDestroy: 4
+  destroyedObject: {fileID: 21300000, guid: b96246d895dcccf4bab079a4957ab73c, type: 3}
 --- !u!1 &1018618768
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441143995}
   - component: {fileID: 1441143996}
+  - component: {fileID: 1441143997}
   m_Layer: 0
   m_Name: pokal_2
   m_TagString: Untagged
@@ -4232,8 +4267,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1441143994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.67, y: 2.52, z: 10}
-  m_LocalScale: {x: 0.52168065, y: 0.574678, z: 1}
+  m_LocalPosition: {x: 2.82, y: 2.59, z: 10}
+  m_LocalScale: {x: 0.46547428, y: 0.43954268, z: 1}
   m_Children: []
   m_Father: {fileID: 668358689}
   m_RootOrder: 23
@@ -4269,8 +4304,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c574360909c4ca443b91c31e00fe0762, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: e6766ca55bd0b5e40ad49db3c5808541, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4280,6 +4315,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1441143997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441143994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 1
+  dayToHide: 0
+  destroyable: 1
+  dayToDestroy: 4
+  destroyedObject: {fileID: 21300000, guid: d6b89b18cc5b9f54eaf73dc9b9198bad, type: 3}
 --- !u!1 &1456324828
 GameObject:
   m_ObjectHideFlags: 0
@@ -4938,6 +4989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1666902356}
   - component: {fileID: 1666902357}
+  - component: {fileID: 1666902358}
   m_Layer: 0
   m_Name: pokal_1
   m_TagString: Untagged
@@ -4952,8 +5004,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1666902355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.87, y: 2.38, z: 10}
-  m_LocalScale: {x: 0.39052826, y: 0.46834764, z: 1}
+  m_LocalPosition: {x: -0.66, y: 2.5, z: 10}
+  m_LocalScale: {x: 0.4278452, y: 0.52635574, z: 1}
   m_Children: []
   m_Father: {fileID: 668358689}
   m_RootOrder: 22
@@ -4990,7 +5042,7 @@ SpriteRenderer:
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 278e5cf49c8279043bfbaefd61825242, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02d94f06f1b4d344d8702d0a66d3331d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5000,6 +5052,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1666902358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666902355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 1
+  dayToHide: 0
+  destroyable: 1
+  dayToDestroy: 5
+  destroyedObject: {fileID: 21300000, guid: ff1012f4f046355429a8979200c9936e, type: 3}
 --- !u!1 &1690345940
 GameObject:
   m_ObjectHideFlags: 0
@@ -5235,6 +5303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1749878795}
   - component: {fileID: 1749878796}
+  - component: {fileID: 1749878797}
   m_Layer: 0
   m_Name: orden
   m_TagString: Untagged
@@ -5249,7 +5318,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1749878794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.71, y: 1.88, z: 10}
+  m_LocalPosition: {x: 1.08, y: 2.1, z: 10}
   m_LocalScale: {x: 0.6254482, y: 0.5720198, z: 1}
   m_Children: []
   m_Father: {fileID: 668358689}
@@ -5286,8 +5355,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7ec5863ded85a074e964af1a08f4b3e2, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 76730f8097bdab8439455892ee839825, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5297,6 +5366,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1749878797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1749878794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 1
+  dayToHide: 0
+  destroyable: 1
+  dayToDestroy: 6
+  destroyedObject: {fileID: 21300000, guid: a9bae0bc9facfcc4ab880ce4e2facf1e, type: 3}
 --- !u!1 &1750027771
 GameObject:
   m_ObjectHideFlags: 0
