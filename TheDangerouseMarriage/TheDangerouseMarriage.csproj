@@ -81,6 +81,7 @@
     <Compile Include="Assets\Skripts\Game\Actions.cs" />
     <Compile Include="Assets\Skripts\Game\AnimationController.cs" />
     <Compile Include="Assets\Skripts\Game\AudioManager.cs" />
+    <Compile Include="Assets\Skripts\Game\Bucket.cs" />
     <Compile Include="Assets\Skripts\Game\Calender.cs" />
     <Compile Include="Assets\Skripts\Game\Cutlery.cs" />
     <Compile Include="Assets\Skripts\Game\Fridge.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Assets\Skripts\Game\Table.cs" />
     <Compile Include="Assets\Skripts\Game\ToDo.cs" />
     <Compile Include="Assets\Skripts\Game\TrashBin.cs" />
+    <Compile Include="Assets\Skripts\Game\Vacuum.cs" />
     <Compile Include="Assets\Skripts\Game\Window.cs" />
     <Compile Include="Assets\Skripts\Menu\PlayerInputEventsMenu.cs" />
   </ItemGroup>
