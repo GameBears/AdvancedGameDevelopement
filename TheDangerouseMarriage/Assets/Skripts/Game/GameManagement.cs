@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum Room
 {
@@ -395,11 +396,13 @@ public class GameManagement : MonoBehaviour
     public void showGoodEnding()
     {
         print("good ending");
+        SceneManager.LoadScene("GoodEnding");
     }
 
     void showBadEnding()
     {
         print("bad ending");
+        SceneManager.LoadScene("BadEnding");
     }
 }
 

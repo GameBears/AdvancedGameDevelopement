@@ -413,6 +413,7 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
+            print(counter);
             done = true;
             bool allMudsRemoved = true;
 
@@ -447,10 +448,11 @@ public class Actions : MonoBehaviour {
                     {
                         toDo.doVacuum = false;
                         infoText.text = "Alex: \"Es liegt immer noch Staub rum. Kannst du den schnell wegmachen?\"";
-                        counter++;
+                        counter = 1;
                         foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
                         {
                             mud.GetComponent<Actions>().setDefaultActiveDone();
+                            mud.GetComponent<Actions>().counter = 1;
                         }
                         GameObject.Find(vacuumCleaner).GetComponent<Actions>().setDefaultActiveDone();
                     }
@@ -470,10 +472,11 @@ public class Actions : MonoBehaviour {
                     {
                         toDo.doVacuum = false;
                         infoText.text = "Alex: \"Hast du vergessen zu saugen? Hol den Staubsauger und mach das nochmal.\"";
-                        counter++;
+                        counter = 1;
                         foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
                         {
                             mud.GetComponent<Actions>().setDefaultActiveDone();
+                            mud.GetComponent<Actions>().counter = 1;
                         }
                         GameObject.Find(vacuumCleaner).GetComponent<Actions>().setDefaultActiveDone();
                     }
@@ -489,10 +492,11 @@ public class Actions : MonoBehaviour {
                     {
                         toDo.doVacuum = false;
                         infoText.text = "Alex: \"Wir brauchen einen neuen Staubsauger, der scheint kaputt zu sein. Der verteilt den ganzen Schmutz nur noch. Mach das nochmal.\"";
-                        counter++;
+                        counter = 1;
                         foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
                         {
                             mud.GetComponent<Actions>().setDefaultActiveDone();
+                            mud.GetComponent<Actions>().counter = 1;
                         }
                         GameObject.Find(vacuumCleaner).GetComponent<Actions>().setDefaultActiveDone();
                     }
@@ -766,7 +770,7 @@ public class Actions : MonoBehaviour {
             }
             else if (gameManager.getDay() == 5)
             {
-                infoText.text = "Zeitungsinhalt: \"Gewalt in der Beziehung ... rufen sie diese Nummer an\"";
+                infoText.text = "Zeitungsinhalt: \"Sie brauchen Hilfe ... rufen sie diese Nummer an\"";
                 gotNumber = true;
             }
             else if (gameManager.getDay() == 6)
