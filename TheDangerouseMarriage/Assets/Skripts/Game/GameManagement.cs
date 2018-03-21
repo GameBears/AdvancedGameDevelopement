@@ -368,27 +368,27 @@ public class GameManagement : MonoBehaviour
         }
         else if (dayCounter == 2)
         {
-            infoText.text = "Kim: \"Es ist immerso schön nach der Arbeit Zeit miteinander zu verbringen.\"";
+            infoText.text = "Kim: \"Es ist immer schön nach der Arbeit Zeit miteinander zu verbringen. Aber es wartet noch Arbeit auf mich.\"";
         }
         else if (dayCounter == 3)
         {
-            infoText.text = "Kim: \"So viele Arztbesuche mit ihm. Ich werde ihm einen schönen Tag bereiten\"";
+            infoText.text = "Kim: \"So viele Arztbesuche. Ich werde heute alles noch schneller erledigen, dann können wir mehr Zeit miteinander verbringen.\"";
         }
         else if (dayCounter == 4)
         {
-            infoText.text = "Kim: \"Irgendwann wird es ihm schon besser gehen.\"";
+            infoText.text = "Kim: \"Irgendwann wird es schon besser sein. Aber zuerst ran an die Arbeit.\"";
         }
         else if (dayCounter == 5)
         {
-            infoText.text = "Kim: \"Motivation für Tag 20.\"";
+            infoText.text = "Kim: \"Vielleicht kann ich mit etwas Arbeit die Stimmung heben.\"";
         }
         else if (dayCounter == 6)
         {
-            infoText.text = "Kim: \"Motivation für Tag 32.\"";
+            infoText.text = "Kim: \"Meine Aufgaben warten auf mich.\"";
         }
         else if (dayCounter == 7)
         {
-            infoText.text = "Kim: \"Motivation für Tag 45.\"";
+            infoText.text = "Kim: \"Es wartet Arbeit auf mich.\"";
         }
     }
 
