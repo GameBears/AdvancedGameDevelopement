@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour {
     public bool isMale;
     public float speed = 0.5f, distanceAction = 1.0f;
     public Color hervorhebungsFarbe;
+    public Sprite spriteOffenderMale;
+    public Sprite spriteOffenderFemale;
     Room room;
     string roomString;
     string errorRoomString = "No such room!";
@@ -123,8 +125,9 @@ public class PlayerController : MonoBehaviour {
             //Kim is female
             isMale = false;
             GetComponent<SpriteRenderer>().sprite = femaleSprite;
-            
+
             //Alex is male
+            GameObject.Find("offender").GetComponent<SpriteRenderer>().sprite = spriteOffenderMale;
         }
         else
         {
@@ -133,6 +136,7 @@ public class PlayerController : MonoBehaviour {
             GetComponent<SpriteRenderer>().sprite = maleSprite;
 
             //Alex is female
+            GameObject.Find("offender").GetComponent<SpriteRenderer>().sprite = spriteOffenderFemale;
         }
     }
 }
