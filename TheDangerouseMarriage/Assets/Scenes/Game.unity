@@ -1789,6 +1789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 602041978}
   - component: {fileID: 602041979}
+  - component: {fileID: 602041980}
   m_Layer: 0
   m_Name: erinnerungsfoto_3
   m_TagString: Untagged
@@ -1841,16 +1842,32 @@ SpriteRenderer:
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 7ceb1fca9a696bc49824a6c525ef07f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3a7269668e9625b4bbf52b0ca3c658c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.67, y: 4.47}
+  m_Size: {x: 3.6, y: 4.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &602041980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 602041977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 1
+  dayToHide: 0
+  destroyable: 1
+  dayToDestroy: 6
+  destroyedObject: {fileID: 21300000, guid: 7c8f85c00b46e8348888eea7a458fd61, type: 3}
 --- !u!1 &628881202
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,6 +3230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1058506679}
   - component: {fileID: 1058506680}
+  - component: {fileID: 1058506681}
   m_Layer: 0
   m_Name: erinnerungsfoto_1
   m_TagString: Untagged
@@ -3265,16 +3283,32 @@ SpriteRenderer:
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a28848f65d9d054c82fd7d2f66f46d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09e37d0e75aa01344bacdce60560e9e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.12, y: 3.52}
+  m_Size: {x: 4.68, y: 3.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1058506681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1058506678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 1
+  dayToHide: 0
+  destroyable: 1
+  dayToDestroy: 4
+  destroyedObject: {fileID: 21300000, guid: 56062e20d75b8b341b6d50f6bee3eebf, type: 3}
 --- !u!1 &1061309643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6292,6 +6326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1883021886}
   - component: {fileID: 1883021887}
+  - component: {fileID: 1883021888}
   m_Layer: 0
   m_Name: erinnerungsfoto_2
   m_TagString: Untagged
@@ -6344,16 +6379,32 @@ SpriteRenderer:
   m_SortingLayerID: 1956028259
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 37c2387b276f89b448ed1cde967ccad1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7bc38e356edccc4fb972ef515afa8de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.39, y: 3.52}
+  m_Size: {x: 4.68, y: 3.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1883021888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1883021885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToShow: 1
+  dayToHide: 0
+  destroyable: 1
+  dayToDestroy: 5
+  destroyedObject: {fileID: 21300000, guid: 5b4472516aebe4e4eac656efa1a828e1, type: 3}
 --- !u!1 &1888101576
 GameObject:
   m_ObjectHideFlags: 0
