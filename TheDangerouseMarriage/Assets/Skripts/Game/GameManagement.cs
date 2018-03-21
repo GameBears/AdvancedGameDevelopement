@@ -394,10 +394,12 @@ public class GameManagement : MonoBehaviour
 
     public void showGoodEnding()
     {
+        print("good ending");
     }
 
     void showBadEnding()
     {
+        print("bad ending");
     }
 }
 

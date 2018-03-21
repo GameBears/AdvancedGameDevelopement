@@ -1607,8 +1607,8 @@ MonoBehaviour:
   dayToShow: 1
   dayToHide: 0
   destroyable: 1
-  dayToDestroy: 3
-  destroyedObject: {fileID: 21300000, guid: 9c7f060595953bd468955723ba7f20bc, type: 3}
+  dayToDestroy: 4
+  destroyedObject: {fileID: 21300000, guid: 42dbc5e5b38da1b4e9b28dffbe8150f7, type: 3}
 --- !u!1 &421413029
 GameObject:
   m_ObjectHideFlags: 0
@@ -2616,12 +2616,12 @@ SpriteRenderer:
   m_SortingLayerID: -212467401
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d546bb17cdc59ed428643d8559a6e20a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b7f1b399a1c91542985a12d4c53859e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.94, y: 5.55}
+  m_Size: {x: 3.82, y: 3.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2657,7 +2657,7 @@ MonoBehaviour:
   dayToHide: 0
   destroyable: 1
   dayToDestroy: 6
-  destroyedObject: {fileID: 21300000, guid: 96e144215b1861c429fb007c2ec9cac8, type: 3}
+  destroyedObject: {fileID: 21300000, guid: bc3fddc9fcddbab4f832aa4bf7c4d631, type: 3}
 --- !u!1 &864124927
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,12 +4632,12 @@ SpriteRenderer:
   m_SortingLayerID: -212467401
   m_SortingLayer: 1
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e6766ca55bd0b5e40ad49db3c5808541, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 179b458dce89dee4aa8861b713d9853f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.17, y: 3.91}
+  m_Size: {x: 3.71, y: 4.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4657,7 +4657,7 @@ MonoBehaviour:
   dayToHide: 0
   destroyable: 1
   dayToDestroy: 4
-  destroyedObject: {fileID: 21300000, guid: d6b89b18cc5b9f54eaf73dc9b9198bad, type: 3}
+  destroyedObject: {fileID: 21300000, guid: c1fc67192e2e57746af24adac14cad69, type: 3}
 --- !u!1 &1456324828
 GameObject:
   m_ObjectHideFlags: 0
@@ -5369,12 +5369,12 @@ SpriteRenderer:
   m_SortingLayerID: -212467401
   m_SortingLayer: 1
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 02d94f06f1b4d344d8702d0a66d3331d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 952a3f18b2f23ec49a73e2557cf492db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.17, y: 3.91}
+  m_Size: {x: 2.5, y: 3.53}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5393,8 +5393,8 @@ MonoBehaviour:
   dayToShow: 1
   dayToHide: 0
   destroyable: 1
-  dayToDestroy: 5
-  destroyedObject: {fileID: 21300000, guid: ff1012f4f046355429a8979200c9936e, type: 3}
+  dayToDestroy: 4
+  destroyedObject: {fileID: 21300000, guid: 079870657da126c409ecf8007276dc46, type: 3}
 --- !u!1 &1690345940
 GameObject:
   m_ObjectHideFlags: 0
@@ -5688,7 +5688,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.11, y: 1.2}
+  m_Size: {x: 1.27, y: 1.23}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5707,7 +5707,7 @@ MonoBehaviour:
   dayToShow: 1
   dayToHide: 0
   destroyable: 1
-  dayToDestroy: 6
+  dayToDestroy: 4
   destroyedObject: {fileID: 21300000, guid: a9bae0bc9facfcc4ab880ce4e2facf1e, type: 3}
 --- !u!1 &1750027771
 GameObject:
@@ -6731,7 +6731,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.53, y: 3.22}
+  m_Size: {x: 2.66, y: 3.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

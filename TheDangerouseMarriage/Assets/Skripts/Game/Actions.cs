@@ -119,7 +119,7 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            infoText.text = "Kim: \"I habe nun Lebensmittel in der Hand.\"";
+            infoText.text = "Kim: \"Jetzt kann ich was kochen.\"";
             done = true;
 
             Actions cookFood = GameObject.Find(stove).GetComponent<Actions>();
@@ -131,7 +131,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Kim: \"Ich habe bereits Lebensmittel aus dem Kühlschrank genommen.\"";
+            infoText.text = "Kim: \"Ich habe bereits etwas aus dem Kühlschrank genommen.\"";
         }
     }
 
@@ -139,7 +139,7 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            infoText.text = "Kim: \"Ich habe nun zubereitetes Essen in der Hand.\"";
+            infoText.text = "Kim: \"Ich habe etwas gekocht.\"";
             done = true;
 
             Actions serveFood = GameObject.Find(table).GetComponent<Actions>();
@@ -151,7 +151,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Kim: \"Ich habe bereits Essen zubereitet.\"";
+            infoText.text = "Kim: \"Ich habe bereits gekocht.\"";
         }
     }
 
@@ -164,11 +164,11 @@ public class Actions : MonoBehaviour {
 
             if (gameManager.getDay() == 1)
             {
-                infoText.text = "Kim: \"Ich freue mich auf das gemeinsame Essen.\"";
+                infoText.text = "Kim: \"Gemeinsam zu essen ist doch das Schönste.\"";
             }
             else if (gameManager.getDay() == 2)
             {
-                infoText.text = "Kim: \"Heute habe ich das Essen ja noch besser hinbekommen.\"";
+                infoText.text = "Kim: \"Heute habe ich das Essen noch besser hinbekommen, als gestern.\"";
             }
             else if (gameManager.getDay() == 3)
             {
@@ -176,7 +176,7 @@ public class Actions : MonoBehaviour {
             }
             else if (gameManager.getDay() == 4)
             {
-                infoText.text = "Alex: \"Hast du das Essen zu lange stehen lassen? Es schmeckt angebrannt, ist aber noch genießbar.\"";
+                infoText.text = "Alex: \"Hast du das Essen zu lange stehen lassen? Es schmeckt angebrannt ... ist aber noch genießbar.\"";
             }
             else if (gameManager.getDay() == 5)
             {
@@ -191,7 +191,7 @@ public class Actions : MonoBehaviour {
                 }
                 else
                 {
-                    infoText.text = "Alex: \"Ist jetzt besser ... das wars aber auch.\"";
+                    infoText.text = "Alex: \"Ist jetzt ok ... könnte aber besser sein.\"";
                     counter = 0;
                 }
 
@@ -200,7 +200,7 @@ public class Actions : MonoBehaviour {
             {
                 if (counter == 0)
                 {
-                    infoText.text = "Alex: \"Du hast schon besser gekocht. Das enttäuscht mich. Ich mach mir etwas selbst.\"";
+                    infoText.text = "Alex: \"Du hast schon besser gekocht. Das enttäuscht mich. Mach das nochmal.\"";
                     toDo.doMeal = false;
                     setDefaultActiveDone();
                     GameObject.Find(fridge).GetComponent<Actions>().setDefaultActiveDone();
@@ -209,7 +209,7 @@ public class Actions : MonoBehaviour {
                 }
                 else
                 {
-                    infoText.text = "Alex: \"Ich hab dir schon gesagt, dass ich mir etwas selbst mache.\"";
+                    infoText.text = "Alex: \"Widerlich. Da muss ich mir gleich was selbst machen.\"";
                     counter = 0;
                 }
             }
@@ -217,7 +217,7 @@ public class Actions : MonoBehaviour {
             {
                 if (counter == 0)
                 {
-                    infoText.text = "Alex: \"Man kann sich beim Kochen nicht mehr auf dich verlassen. Du warst früher so gut darin.\"";
+                    infoText.text = "Alex: \"Man kann sich beim Kochen nicht mehr auf dich verlassen. Du warst früher so gut darin. Versuchs gleich nochmal.\"";
                     toDo.doMeal = false;
                     setDefaultActiveDone();
                     GameObject.Find(fridge).GetComponent<Actions>().setDefaultActiveDone();
@@ -226,7 +226,7 @@ public class Actions : MonoBehaviour {
                 }
                 else if (counter == 1)
                 {
-                    infoText.text = "Alex: \"Nein, schmeckt immer noch nicht...\"";
+                    infoText.text = "Alex: \"Nein, schmeckt immer noch nicht ... nochmal.\"";
                     toDo.doMeal = false;
                     setDefaultActiveDone();
                     GameObject.Find(fridge).GetComponent<Actions>().setDefaultActiveDone();
@@ -242,7 +242,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Kim: \"I habe das essen bereits serviert.\"";
+            infoText.text = "Kim: \"Das Essen ist bereits fertig.\"";
         }
     }
 
@@ -255,7 +255,7 @@ public class Actions : MonoBehaviour {
 
             if (gameManager.getDay() == 1)
             {
-                infoText.text = "Kim: \"Ein Teller, noch ein Teller und das Besteck nicht vergessen.... so und  fertig.\"";
+                infoText.text = "Kim: \"Sauberes Geschir macht das Essen gleich leckerer.\"";
             }
             else if (gameManager.getDay() == 2)
             {
@@ -274,14 +274,14 @@ public class Actions : MonoBehaviour {
                 if (counter == 0)
                 {
                     toDo.doDishes = false;
-                    infoText.text = "Alex: \"Mit solch ein Besteck ess ich doch nicht. Da sind ja noch Reste vom Vortag dran.\"";
+                    infoText.text = "Alex: \"Mit solch einem Besteck ess ich doch nicht. Da sind ja noch Reste vom Vortag dran. Mach das nochmal.\"";
                     counter++;
                     setDefaultActiveDone();
                 }
                 else if (counter == 1)
                 {
                     toDo.doDishes = false;
-                    infoText.text = "Alex: \"Wie? … Du hast nur das Besteck gemacht? An dem Teller ist ja auch noch was dran!\"";
+                    infoText.text = "Alex: \"Wie? … Du hast nur das Besteck gemacht? An dem Teller ist ja auch noch was dran! Mach das gleich nochmal.\"";
                     counter++;
                     setDefaultActiveDone();
                 }
@@ -296,13 +296,13 @@ public class Actions : MonoBehaviour {
                 if (counter == 0)
                 {
                     toDo.doDishes = false;
-                    infoText.text = "Alex: \"Man benutzt sauberes Geschirr zum Essen, nicht Dreckiges.\"";
+                    infoText.text = "Alex: \"Man benutzt sauberes Geschirr zum Essen, nicht Dreckiges. Mach das nochmal.\"";
                     counter++;
                     setDefaultActiveDone();
                 }
                 else
                 {
-                    infoText.text = "Alex: \"Ist das so schwer? Bald kann ich ja das selber machen.\"";
+                    infoText.text = "Alex: \"Ist das so schwer? Bald kann ich das selber machen.\"";
                     counter = 0;
                 }
             }
@@ -313,7 +313,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Kim: \"Das Geschirr ist sauber.\"";
+            infoText.text = "Kim: \"Das Geschirr ist bereits sauber.\"";
         }
     }
 
@@ -321,7 +321,7 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            infoText.text = "Kim: \"Ich habe nun den Müllbeutel in der Hand.\"";
+            infoText.text = "Kim: \"Jetzt muss ich den Müll noch rausbringen.\"";
             done = true;
 
             Actions doGarbage = GameObject.Find(trashBinBig).GetComponent<Actions>();
@@ -333,7 +333,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Kim: \"Ich habe bereits den Müll rausgenommen.\"";
+            infoText.text = "Kim: \"Der Mülleimer ist leer.\"";
         }
     }
 
@@ -346,15 +346,15 @@ public class Actions : MonoBehaviour {
 
             if (gameManager.getDay() == 1)
             {
-                infoText.text = "Kim: \"Da hat sich ja wieder was angesammelt ...\"";
+                infoText.text = "Kim: \"Wie schnell sich der Müll doch ansammelt.\"";
             }
             else if (gameManager.getDay() == 2)
             {
-                infoText.text = "Kim: \"Heute kommt die Müllabfuhr. Ich bring noch den Rest mit raus.\"";
+                infoText.text = "Kim: \"Heute kommt die Müllabfuhr. Gut dass ich das jetzt noch gemacht habe.\"";
             }
             else if (gameManager.getDay() == 3)
             {
-                infoText.text = "Kim: \"Eigentlich ist er heute an der Reihe, den Müll rauszubringen. Aber ich werde ihn damit nicht belästigen.\"";
+                infoText.text = "Kim: \"Eigentlich war ich heute nicht an der Reihe, den Müll rauszubringen. Aber ich sollte nicht nur an mich denken.\"";
             }
             else if (gameManager.getDay() == 4)
             {
@@ -387,7 +387,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Kim: \"Das habe ich schon erledigt.\"";
+            infoText.text = "Kim: \"Den Müll habe ich schon weggebracht.\"";
         }
     }
 
@@ -400,12 +400,12 @@ public class Actions : MonoBehaviour {
                 mud.GetComponent<Actions>().active = true;
             }
 
-            infoText.text = "Kim: \"Ich habe nun den Staubsauger in der Hand.\"";
+            infoText.text = "Kim: \"Jetzt kann ich Staub saugen.\"";
             done = true;
         }
         else
         {
-            infoText.text = "Kim: \"Ich habe bereits den Staubsauger in der Hand.\"";
+            infoText.text = "Kim: \"Ich habe bereits den Staubsauger genommen.\"";
         }
     }
 
@@ -439,7 +439,7 @@ public class Actions : MonoBehaviour {
                 }
                 else if (gameManager.getDay() == 3)
                 {
-                    infoText.text = "Kim: \"Vielleicht macht ihn ein staubfreies Zuhause gleich ein wenig glücklicher.\"";
+                    infoText.text = "Kim: \"Ein staubfreies Zuhause macht gleich ein wenig glücklicher.\"";
                 }
                 else if (gameManager.getDay() == 4)
                 {
@@ -462,14 +462,14 @@ public class Actions : MonoBehaviour {
                 }
                 else if (gameManager.getDay() == 5)
                 {
-                    infoText.text = "Alex: \"Beim nächsten Mal fegst du per Hand nach.\"";
+                    infoText.text = "Alex: \"Du solltest die kleinen stellen noch per Hand nachfegen.\"";
                 }
                 else if (gameManager.getDay() == 6)
                 {
                     if (counter == 0)
                     {
                         toDo.doVacuum = false;
-                        infoText.text = "Alex: \"Hast du vergessen zu saugen?\"";
+                        infoText.text = "Alex: \"Hast du vergessen zu saugen? Hol den Staubsauger und mach das nochmal.\"";
                         counter++;
                         foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
                         {
@@ -479,7 +479,7 @@ public class Actions : MonoBehaviour {
                     }
                     else
                     {
-                        infoText.text = "Alex: \"Beim nächsten Mal bitte sofort machen.\"";
+                        infoText.text = "Alex: \"Beim nächsten Mal strengst du dich an.\"";
                         counter = 0;
                     }
                 }
@@ -488,7 +488,7 @@ public class Actions : MonoBehaviour {
                     if (counter == 0)
                     {
                         toDo.doVacuum = false;
-                        infoText.text = "Alex: \"Wir brauchen einen neuen Staubsauger, der scheint kaputt zu sein. Der verteilt den ganzen Schmutz nur noch.\"";
+                        infoText.text = "Alex: \"Wir brauchen einen neuen Staubsauger, der scheint kaputt zu sein. Der verteilt den ganzen Schmutz nur noch. Mach das nochmal.\"";
                         counter++;
                         foreach (GameObject mud in GameObject.FindGameObjectsWithTag(mud))
                         {
@@ -498,14 +498,14 @@ public class Actions : MonoBehaviour {
                     }
                     else
                     {
-                        infoText.text = "Alex: \"Oh...Es lag doch nur an deine Unfähigkeit.\"";
+                        infoText.text = "Alex: \"Oh...Es lag doch nur an deiner Unfähigkeit.\"";
                         counter = 0;
                     }
                 }
             }
             else
             {
-                infoText.text = "Kim: \"Dieser Staubhaufen ist nun beseitigt.\"";
+                infoText.text = "Kim: \"Ein Staubhaufen weniger.\"";
             }
         }
         else
@@ -526,7 +526,7 @@ public class Actions : MonoBehaviour {
         }
         else
         {
-            infoText.text = "Kim: \"Ich habe bereits den Eimer in meiner Hand.\"";
+            infoText.text = "Kim: \"Den Eimer habe ich schon genommen.\"";
         }
     }
 
@@ -569,7 +569,7 @@ public class Actions : MonoBehaviour {
                     if (counter == 0)
                     {
                         toDo.doWindow = false;
-                        output = "Alex: \"Ist es neblig draußen oder warum sieht man so schlecht durch Fenster? … Ach das warst du? ... Mach das bitte besser.\"";
+                        output = "Alex: \"Ist es neblig draußen oder warum sieht man so schlecht durch Fenster? … Ach das warst du? ... Mach das gleich nochmal.\"";
                         counter++;
                         setDefaultActiveDone();
                         GameObject.Find(bucket).GetComponent<Actions>().setDefaultActiveDone();
@@ -587,7 +587,7 @@ public class Actions : MonoBehaviour {
                     if (counter == 0)
                     {
                         toDo.doWindow = false;
-                        output = "Alex: \"Machst du das mit Absicht oder warum sind die Fenster noch nicht sauber?\"";
+                        output = "Alex: \"Machst du das mit Absicht oder warum sind die Fenster noch nicht sauber? ... nochmal.\"";
                         counter++;
                         setDefaultActiveDone();
                         GameObject.Find(bucket).GetComponent<Actions>().setDefaultActiveDone();
@@ -597,7 +597,7 @@ public class Actions : MonoBehaviour {
                     else if (counter == 1)
                     {
                         toDo.doWindow = false;
-                        output = "Alex: \"Hast du vergessen, was Sauberkeit bedeutet?\"";
+                        output = "Alex: \"Hast du vergessen, was Sauberkeit bedeutet? Mach das besser.\"";
                         counter++;
                         setDefaultActiveDone();
                         GameObject.Find(bucket).GetComponent<Actions>().setDefaultActiveDone();
@@ -632,7 +632,7 @@ public class Actions : MonoBehaviour {
     {
         if (counter > 1 && !done)
         {
-            infoText.text = "Kim: \"Das Radio scheint kaputt zu sein.\"";
+            infoText.text = "Kim: \"Das Radio funktioniert nicht mehr.\"";
         }
         else
         {
@@ -737,7 +737,7 @@ public class Actions : MonoBehaviour {
     {
         if (counter >= 2)
         {
-            infoText.text = "Alex: \"Geh nicht immer raus. Komm wieder rein.\"";
+            infoText.text = "Alex: \"Warum gehst du immer so lange raus. Komm wieder rein.\"";
             return;
         }
 
