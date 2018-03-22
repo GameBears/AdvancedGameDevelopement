@@ -397,12 +397,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritesMale:
-  - {fileID: 21300000, guid: 1320a8598dac2634f95e14755c4d3433, type: 3}
-  - {fileID: 21300000, guid: 1daf7bbdb36fca243a99d34bbc8fedc8, type: 3}
-  - {fileID: 21300000, guid: a5244354f8144df4ca935a49fa2cab47, type: 3}
-  - {fileID: 21300000, guid: d81318fb1ecbf1543bc433eccf0d234d, type: 3}
-  - {fileID: 21300000, guid: 601593bf32cf9d14fb64cfb5ab4f61f4, type: 3}
-  - {fileID: 21300000, guid: 7df2a24e735290e4d82206e244455d16, type: 3}
+  - {fileID: 21300000, guid: 06430ffd26719a242a400e5791797071, type: 3}
+  - {fileID: 21300000, guid: 288014901a33db647b1e85ba7709adea, type: 3}
+  - {fileID: 21300000, guid: 0680fe6f814f63b4884d59ed0dcacfe4, type: 3}
+  - {fileID: 21300000, guid: 8bd7da2a74b627440a106b3ad4bbc4a5, type: 3}
+  - {fileID: 21300000, guid: fd1146509269c3c4fa1bea871412e19a, type: 3}
+  - {fileID: 21300000, guid: c79777ff1adc39f4da0896903953a3f7, type: 3}
   spritesFemale:
   - {fileID: 21300000, guid: 459b433773e79534d9fadf9fb679ee10, type: 3}
   - {fileID: 21300000, guid: a9bafb53246ba57489670c19c973bd09, type: 3}

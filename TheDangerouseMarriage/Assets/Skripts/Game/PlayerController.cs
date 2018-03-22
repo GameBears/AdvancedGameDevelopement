@@ -120,7 +120,10 @@ public class PlayerController : MonoBehaviour {
         Color male = new Color(0.0f, 0.0f, 0.0f);
         Color female = new Color(0.0f, 0.0f, 0.0f);
 
-        if (Random.value > 0.5f)
+
+
+        //if (Random.value > 0.5f)
+        if(!isMale)
         {
             //Kim is female
             isMale = false;

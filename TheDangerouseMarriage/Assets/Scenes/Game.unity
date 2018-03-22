@@ -5774,7 +5774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b9ad76e52b65642b194aca87344eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMale: 0
+  isMale: 1
   speed: 0.1
   distanceAction: 1
   hervorhebungsFarbe: {r: 1, g: 1, b: 0.7758621, a: 1}
