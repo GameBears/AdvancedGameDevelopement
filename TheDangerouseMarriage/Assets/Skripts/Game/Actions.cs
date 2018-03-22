@@ -762,7 +762,14 @@ public class Actions : MonoBehaviour {
             }
             else if (gameManager.getDay() == 3)
             {
-                infoText.text = "Zeitungstitel: \"Feuerwehrmann verletzt sich bei Rettung\"";
+                string text = "Zeitungstitel: \"Feuerwehrmann verletzt sich bei Rettung\"";
+
+                if (GameObject.Find("Player").GetComponent<PlayerController>().isMale)
+                {
+                    text = text.Replace("mann", "frau");
+                }
+
+                infoText.text = text;
             }
             else if (gameManager.getDay() == 4)
             {
