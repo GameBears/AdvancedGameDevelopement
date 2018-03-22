@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour {
         {
             //Kim is female
             isMale = false;
+            GenderSaver.IsMale = false;
             GetComponent<SpriteRenderer>().sprite = femaleSprite;
 
             //Alex is male
@@ -133,6 +134,7 @@ public class PlayerController : MonoBehaviour {
         {
             //Kim is male
             isMale = true;
+            GenderSaver.IsMale = true;
             GetComponent<SpriteRenderer>().sprite = maleSprite;
 
             //Alex is female

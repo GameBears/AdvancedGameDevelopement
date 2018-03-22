@@ -4436,7 +4436,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1422159359}
   - component: {fileID: 1422159361}
-  - component: {fileID: 1422159360}
   m_Layer: 0
   m_Name: Radio Cabinet (1)
   m_TagString: Untagged
@@ -4457,22 +4456,6 @@ Transform:
   m_Father: {fileID: 98445889}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1422159360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1422159358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd3dc9a1d2997544bbdc3384d92075e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dayToShow: 1
-  dayToHide: 0
-  destroyable: 0
-  dayToDestroy: 4
-  destroyedObject: {fileID: 21300000, guid: 69d2b1173d4e67841b4c71d81593a94c, type: 3}
 --- !u!212 &1422159361
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -413,7 +413,6 @@ public class Actions : MonoBehaviour {
     {
         if (!done)
         {
-            print(counter);
             done = true;
             bool allMudsRemoved = true;
 
