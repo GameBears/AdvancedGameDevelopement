@@ -44,7 +44,7 @@ public class EndingSprites : MonoBehaviour {
         {
             if (!quit)
             {
-                if (Input.GetKeyUp(KeyCode.Space) && actualSprite != length - 1)
+                if (Input.GetKeyUp(KeyCode.Space))
                 {
                     actualSprite++;
 
@@ -54,13 +54,16 @@ public class EndingSprites : MonoBehaviour {
                         quit = true;
                     }
 
-                    if (GenderSaver.IsMale)
+                    if (actualSprite < length)
                     {
-                        GetComponent<SpriteRenderer>().sprite = spritesMale[actualSprite];
-                    }
-                    else
-                    {
-                        GetComponent<SpriteRenderer>().sprite = spritesFemale[actualSprite];
+                        if (GenderSaver.IsMale)
+                        {
+                            GetComponent<SpriteRenderer>().sprite = spritesMale[actualSprite];
+                        }
+                        else
+                        {
+                            GetComponent<SpriteRenderer>().sprite = spritesFemale[actualSprite];
+                        }
                     }
                 }
             }

@@ -282,6 +282,16 @@ public class GameManagement : MonoBehaviour
     {
         //loadSequenceImages(dayCounter);
 
+        if (Actions.goodEnding)
+        {
+            showGoodEnding();
+        }
+
+        if (dayCounter + 1 > 7)
+        {
+            showBadEnding();
+        }
+
         resetActions();
 
         GameObject.Find("ToDoText").GetComponent<ToDo>().setToDoFalse();
@@ -301,11 +311,6 @@ public class GameManagement : MonoBehaviour
         dayStartText();
 
         setRoomSprites();
-
-        if (dayCounter > 7)
-        {
-            showBadEnding();
-        }
     }
 
     void resetActions()

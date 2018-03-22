@@ -23,6 +23,7 @@ public enum Action
 }
 
 public class Actions : MonoBehaviour {
+    public static bool goodEnding = false;
     static bool gotNumber = false;
     ToDo toDo;
     public bool isSideQuest = false;
@@ -308,7 +309,7 @@ public class Actions : MonoBehaviour {
             }
             else if (gameManager.getDay() == 7)
             {
-                infoText.text = "Kim: \"Keine Worte… Ich hab dafür keine Worte mehr.\"";
+                infoText.text = "Alex: \"Keine Worte… Ich hab dafür keine Worte mehr.\"";
             }
         }
         else
@@ -817,7 +818,9 @@ public class Actions : MonoBehaviour {
             {
                 //Ende 2
                 infoText.text = "Kim: \"Helfen sie mir ... bitte ...\"";
-                gameManager.showGoodEnding();
+                Actions.goodEnding = true;
+                gameManager.waitForNewDay = true;
+                return;
             }
 
             if (gameManager.getDay() == 1)
