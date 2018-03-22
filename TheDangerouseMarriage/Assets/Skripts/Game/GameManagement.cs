@@ -285,11 +285,13 @@ public class GameManagement : MonoBehaviour
         if (Actions.goodEnding)
         {
             showGoodEnding();
+            return;
         }
 
         if (dayCounter + 1 > 7)
         {
             showBadEnding();
+            return;
         }
 
         resetActions();
